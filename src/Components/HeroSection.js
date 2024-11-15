@@ -86,36 +86,125 @@
 
 // export default HeroSection;
 
-import React, { useState, useEffect } from "react";
-import Banner1 from "../Images/banner-1.jpg";
-import Banner2 from "../Images/banner-1.jpg";
-import Banner3 from "../Images/banner-1.jpg";
-import Banner4 from "../Images/banner-1.jpg";
-import Banner5 from "../Images/banner-1.jpg";
+// import React, { useState, useEffect } from "react";
+// import Banner1 from "../Images/banner-1.jpg";
+// import Banner2 from "../Images/banner-1.jpg";
+// import Banner3 from "../Images/banner-1.jpg";
+// import Banner4 from "../Images/banner-1.jpg";
+// import Banner5 from "../Images/banner-1.jpg";
 
-const banners = [Banner1, Banner2, Banner3, Banner4, Banner5];
+// const banners = [Banner1, Banner2, Banner3, Banner4, Banner5];
+
+// const HeroSection = () => {
+//   const [currentBanner, setCurrentBanner] = useState(0);
+
+//   useEffect(() => {
+//     const interval = setInterval(() => {
+//       setCurrentBanner((prevBanner) => (prevBanner + 1) % banners.length);
+//     }, 1000); // 3 seconds per banner
+//     return () => clearInterval(interval);
+//   }, []);
+
+//   return (
+//     <section className="relative overflow-hidden w-full h-80">
+//       <div
+//         className="absolute inset-0 w-full h-full bg-cover bg-center transition-transform duration-1000 ease-in-out"
+//         style={{
+//           backgroundImage: `url(${banners[currentBanner]})`,
+//           transform: `scale(1.1)`,
+//         }}
+//       >
+//         <div className="absolute inset-0 bg-[#A8BDA1] opacity-10"></div>{" "}
+//         {/* Overlay */}
+//       </div>
+//     </section>
+//   );
+// };
+
+// export default HeroSection;
+
+// import React, { useState, useEffect } from "react";
+// import Banner1 from "../Images/banner-1.jpg";
+// import Banner2 from "../Images/banner-1.jpg";
+// import Banner3 from "../Images/banner-1.jpg";
+// import Banner4 from "../Images/banner-1.jpg";
+// import Banner5 from "../Images/banner-1.jpg";
+
+// const banners = [Banner1, Banner2, Banner3, Banner4, Banner5];
+
+// const HeroSection = () => {
+//   const [currentBanner, setCurrentBanner] = useState(0);
+
+//   useEffect(() => {
+//     const interval = setInterval(() => {
+//       setCurrentBanner((prevBanner) => (prevBanner + 1) % banners.length);
+//     }, 3000); // 3 seconds per banner for a smoother transition
+//     return () => clearInterval(interval);
+//   }, []);
+
+//   return (
+//     <section className="relative overflow-hidden w-full h-80">
+//       <div
+//         className="absolute inset-0 w-full h-full bg-cover bg-center transition-transform duration-1000 ease-in-out"
+//         style={{
+//           backgroundImage: `url(${banners[currentBanner]})`,
+//           transform: `scale(1.05)`,
+//         }}
+//       >
+//         <div className="absolute inset-0 bg-[#2F5233] opacity-30"></div>{" "}
+//         {/* Updated overlay */}
+//       </div>
+//     </section>
+//   );
+// };
+
+// export default HeroSection;
+
+import React from "react";
+import { Link } from "react-router-dom";
+import backgroundVideo from "../Images/videoplayback.mp4"; // Replace with your actual video path
 
 const HeroSection = () => {
-  const [currentBanner, setCurrentBanner] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentBanner((prevBanner) => (prevBanner + 1) % banners.length);
-    }, 1000); // 3 seconds per banner
-    return () => clearInterval(interval);
-  }, []);
-
   return (
-    <section className="relative overflow-hidden w-full h-80">
-      <div
-        className="absolute inset-0 w-full h-full bg-cover bg-center transition-transform duration-1000 ease-in-out"
-        style={{
-          backgroundImage: `url(${banners[currentBanner]})`,
-          transform: `scale(1.1)`,
-        }}
-      >
-        <div className="absolute inset-0 bg-[#A8BDA1] opacity-10"></div>{" "}
-        {/* Overlay */}
+    <section className="relative w-full h-screen overflow-hidden">
+      {/* Video Background */}
+      <video
+        className="absolute top-0 left-0 w-full h-full object-cover"
+        src={backgroundVideo}
+        autoPlay
+        loop
+        muted
+        playsInline
+      />
+
+      {/* Overlay */}
+      <div className="absolute top-0 left-0 w-full h-full bg-black opacity-20"></div>
+
+      {/* Text Content */}
+      <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-6">
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-serif mb-4 text-[#F5F1E0]">
+          Empowering Sustainable Growth
+        </h1>
+        <p className="text-lg md:text-xl font-sans max-w-2xl leading-relaxed mb-8 text-[#A8BDA1]">
+          Discover the eco-friendly, sustainable choice for nurturing healthy
+          plants with our premium cocopeat products.
+        </p>
+
+        {/* CTA Buttons */}
+        <div className="flex space-x-4">
+          <Link
+            to="/products"
+            className="px-6 py-3 bg-[#2F5233] text-white font-sans text-lg rounded-lg hover:bg-[#1E3B2B] transition duration-300"
+          >
+            Shop Cocopeat Products
+          </Link>
+          <Link
+            to="/about-us"
+            className="px-6 py-3 bg-[#A8BDA1] text-[#2F5233] font-sans text-lg rounded-lg hover:bg-[#8AA68E] transition duration-300"
+          >
+            Learn More
+          </Link>
+        </div>
       </div>
     </section>
   );

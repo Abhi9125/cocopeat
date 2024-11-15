@@ -44,15 +44,15 @@ import React from "react";
 const Cocopeat = () => {
   return (
     <section className="bg-[#F5F1E0] py-12 px-6">
-      <h2 className="text-3xl font-bold text-center text-[#2F5233] mb-10">
+      <h2 className="text-3xl font-bold text-center text-[#2F5233] mb-10 font-serif">
         Poycoco Cocopeat
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
         <div className="bg-[#FFFFFF] rounded-lg shadow-md p-6">
-          <h3 className="text-xl font-semibold text-[#6B4F4F] mb-4">
+          <h3 className="text-xl font-semibold text-[#6B4F4F] mb-4 font-serif">
             COCO PEAT FOR GROWING CROPS
           </h3>
-          <p className="text-neutralBrown leading-relaxed">
+          <p className="text-neutralBrown leading-relaxed font-sans">
             Coco Peat is a superior growing medium in soilless cultivation. Coco
             Peat, also known as Coir Fiber or Coir Substrate, is a natural and
             sustainable product created as a byproduct during fiber extraction
@@ -62,10 +62,10 @@ const Cocopeat = () => {
           </p>
         </div>
         <div className="bg-[#FFFFFF] rounded-lg shadow-md p-6">
-          <h3 className="text-xl font-semibold text-[#6B4F4F] mb-4">
+          <h3 className="text-xl font-semibold text-[#6B4F4F] mb-4 font-serif">
             Benefits of Growing in Coco Peat
           </h3>
-          <p className="text-neutralBrown leading-relaxed">
+          <p className="text-neutralBrown leading-relaxed font-sans">
             Coco Peat is an eco-friendly, versatile growing medium that enhances
             productivity, reduces pest infestations, and maintains optimal
             moisture levels. Its high porosity and long-term water retention

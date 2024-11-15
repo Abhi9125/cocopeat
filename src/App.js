@@ -46,13 +46,22 @@ import Header from "./Components/Header";
 import HeroSection from "./Components/HeroSection";
 import About from "./Components/About";
 import Products from "./Components/Products";
-// import Footer from "./Components/Footer";
+import Footer from "./Components/Footer";
 import ProductPage from "./Components/ProductPage";
+import Cocopeat from "./Components/Cocopeat";
+import ContactUs from "./Components/ContactUs";
+import Breadcrumb from "./Components/Breadcrumb";
+import InteractiveProductCategories from "./Components/InteractiveProductCategories";
+import BenefitsSection from "./Components/BenefitsSection";
+import HowItWorks from "./Components/HowItWorks";
+import FeaturedProducts from "./Components/FeaturedProducts";
+import EnvironmentalImpact from "./Components/EnvironmentalImpact";
 
 function App() {
   return (
     <Router>
       <Header />
+      {/* <Breadcrumb /> */}
       <div className="pt-16 pb-16">
         <Routes>
           <Route
@@ -61,14 +70,22 @@ function App() {
               <>
                 <HeroSection />
                 <About />
-                <Products />
+                <InteractiveProductCategories />
+                <BenefitsSection />
+                <HowItWorks />
+                <FeaturedProducts />
+                <EnvironmentalImpact />
+                {/* <Cocopeat />
+                <Products /> */}
               </>
             }
           />
+          <Route path="/about-us" element={<About />} />
           <Route path="/products/:productId" element={<ProductPage />} />
+          <Route path="/contact" element={<ContactUs />} />
         </Routes>
       </div>
-      {/* <Footer /> */}
+      <Footer />
     </Router>
   );
 }

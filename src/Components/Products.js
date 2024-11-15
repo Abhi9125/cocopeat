@@ -404,7 +404,7 @@ const Products = () => {
 
   return (
     <section id="products" className="p-6 bg-[#F5F1E0]">
-      <h2 className="text-3xl font-bold text-center text-[#2F5233] mb-8">
+      <h2 className="text-3xl font-bold text-center text-[#2F5233] mb-8 font-serif">
         Our Products
       </h2>
       <Slider {...settings} className="max-w-5xl mx-auto">
@@ -420,10 +420,12 @@ const Products = () => {
                 className="w-full h-40 object-cover rounded-t-md"
               />
               <div className="p-4 text-center">
-                <h3 className="text-xl font-semibold text-[#2F5233]">
+                <h3 className="text-xl font-semibold text-[#2F5233] font-serif">
                   {product.name}
                 </h3>
-                <p className="mt-2 text-[#6B4F4F]">{product.description}</p>
+                <p className="mt-2 text-[#6B4F4F] font-sans">
+                  {product.description}
+                </p>
               </div>
             </div>
           </div>

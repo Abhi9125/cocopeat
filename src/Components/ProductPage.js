@@ -23,6 +23,7 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import productData from "../Data/ProductData";
+import Breadcrumb from "./Breadcrumb";
 
 const ProductPage = () => {
   const { productId } = useParams();
@@ -33,19 +34,22 @@ const ProductPage = () => {
   }
 
   return (
-    <div className="p-6">
-      <h2 className="text-3xl font-bold">{product.name}</h2>
-      <img
-        src={product.image}
-        alt={product.name}
-        className="w-full h-auto mt-4"
-      />
-      <p className="mt-4">{product.description}</p>
-      <ul className="mt-4 list-disc pl-5">
-        {product.benefits.map((benefit, index) => (
-          <li key={index}>{benefit}</li>
-        ))}
-      </ul>
+    <div>
+      <Breadcrumb />
+      <div className="p-6">
+        <h2 className="text-3xl font-bold">{product.name}</h2>
+        <img
+          src={product.image}
+          alt={product.name}
+          className="w-full h-auto mt-4"
+        />
+        <p className="mt-4">{product.description}</p>
+        <ul className="mt-4 list-disc pl-5">
+          {product.benefits.map((benefit, index) => (
+            <li key={index}>{benefit}</li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 };
