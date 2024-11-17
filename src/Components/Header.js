@@ -1138,27 +1138,163 @@
 
 // export default Header;
 
-import React, { useState, useEffect, useRef } from "react";
+// import React, { useState, useEffect, useRef } from "react";
+// import { Link } from "react-router-dom";
+
+// const Header = () => {
+//   const [isScrolled, setIsScrolled] = useState(false);
+//   const [showProductDropdown, setShowProductDropdown] = useState(false);
+//   const productDropdownTimeout = useRef(null);
+
+//   // Handlers for Products Dropdown
+//   const handleProductMouseEnter = () => {
+//     if (productDropdownTimeout.current)
+//       clearTimeout(productDropdownTimeout.current);
+//     setShowProductDropdown(true);
+//   };
+
+//   const handleProductMouseLeave = () => {
+//     productDropdownTimeout.current = setTimeout(
+//       () => setShowProductDropdown(false),
+//       200
+//     );
+//   };
+
+//   // Handle scroll behavior
+//   useEffect(() => {
+//     const handleScroll = () => {
+//       setIsScrolled(window.scrollY > 50); // Show only navigation if scrolled more than 50px
+//     };
+//     window.addEventListener("scroll", handleScroll);
+//     return () => {
+//       window.removeEventListener("scroll", handleScroll);
+//     };
+//   }, []);
+
+//   return (
+//     <header
+//       className={`fixed top-0 w-full z-20 shadow-md transition-transform duration-300 ${
+//         isScrolled ? "bg-[#FFFFFF]" : "bg-white"
+//       }`}
+//     >
+//       <div
+//         className={`container mx-auto flex flex-col items-center py-4 transition-all duration-300 ${
+//           isScrolled ? "opacity-0 h-0 overflow-hidden" : "opacity-100 h-auto"
+//         }`}
+//       >
+//         {/* Logo */}
+//         <Link to="/" className="text-3xl font-bold font-serif text-[#2F5233]">
+//           POYS COCO EXPORTS
+//         </Link>
+//       </div>
+
+//       {/* Navigation Links */}
+//       <div className="container mx-auto">
+//         <nav
+//           className={`flex justify-center space-x-8 font-sans text-[#2F5233] text-lg py-2 ${
+//             isScrolled ? "py-4" : "py-2"
+//           }`}
+//         >
+//           <Link
+//             to="/"
+//             className="hover:text-[#1E3B2B] hover:underline transition duration-200"
+//           >
+//             Home
+//           </Link>
+
+//           {/* Products Dropdown */}
+//           <div
+//             className="relative"
+//             onMouseEnter={handleProductMouseEnter}
+//             onMouseLeave={handleProductMouseLeave}
+//           >
+//             <span className="hover:text-[#1E3B2B] hover:underline transition duration-200 cursor-pointer">
+//               Products
+//             </span>
+//             {showProductDropdown && (
+//               <div
+//                 className="absolute top-full left-0 mt-2 w-80 bg-[#A8BDA1] text-[#2F5233] shadow-lg rounded-md z-30"
+//                 onMouseEnter={handleProductMouseEnter}
+//                 onMouseLeave={handleProductMouseLeave}
+//               >
+//                 <ul>
+//                   <li>
+//                     <Link
+//                       to="/products/coir-peat"
+//                       className="block px-4 py-2 hover:bg-[#F5F1E0]"
+//                     >
+//                       Coir Peat
+//                     </Link>
+//                   </li>
+//                   <li>
+//                     <Link
+//                       to="/products/coir-peat-grow-bag"
+//                       className="block px-4 py-2 hover:bg-[#F5F1E0]"
+//                     >
+//                       Coir Peat Grow Bag
+//                     </Link>
+//                   </li>
+//                   <li>
+//                     <Link
+//                       to="/products/coir-garden-articles"
+//                       className="block px-4 py-2 hover:bg-[#F5F1E0]"
+//                     >
+//                       Coir Garden Articles
+//                     </Link>
+//                   </li>
+//                   <li>
+//                     <Link
+//                       to="/products/coir-geo-textiles"
+//                       className="block px-4 py-2 hover:bg-[#F5F1E0]"
+//                     >
+//                       Coir Geo Textiles
+//                     </Link>
+//                   </li>
+//                   <li>
+//                     <Link
+//                       to="/products/tender-coconut"
+//                       className="block px-4 py-2 hover:bg-[#F5F1E0]"
+//                     >
+//                       Tender Coconut
+//                     </Link>
+//                   </li>
+//                 </ul>
+//               </div>
+//             )}
+//           </div>
+
+//           <Link
+//             to="/resources"
+//             className="hover:text-[#1E3B2B] hover:underline transition duration-200"
+//           >
+//             Resources
+//           </Link>
+//           <Link
+//             to="/about-us"
+//             className="hover:text-[#1E3B2B] hover:underline transition duration-200"
+//           >
+//             About
+//           </Link>
+//           <Link
+//             to="/contact"
+//             className="hover:text-[#1E3B2B] hover:underline transition duration-200"
+//           >
+//             Contact
+//           </Link>
+//         </nav>
+//       </div>
+//       <hr className="border-t border-[#A8BDA1]" />
+//     </header>
+//   );
+// };
+
+// export default Header;
+
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [showProductDropdown, setShowProductDropdown] = useState(false);
-  const productDropdownTimeout = useRef(null);
-
-  // Handlers for Products Dropdown
-  const handleProductMouseEnter = () => {
-    if (productDropdownTimeout.current)
-      clearTimeout(productDropdownTimeout.current);
-    setShowProductDropdown(true);
-  };
-
-  const handleProductMouseLeave = () => {
-    productDropdownTimeout.current = setTimeout(
-      () => setShowProductDropdown(false),
-      200
-    );
-  };
 
   // Handle scroll behavior
   useEffect(() => {
@@ -1201,68 +1337,12 @@ const Header = () => {
           >
             Home
           </Link>
-
-          {/* Products Dropdown */}
-          <div
-            className="relative"
-            onMouseEnter={handleProductMouseEnter}
-            onMouseLeave={handleProductMouseLeave}
+          <Link
+            to="/products"
+            className="hover:text-[#1E3B2B] hover:underline transition duration-200"
           >
-            <span className="hover:text-[#1E3B2B] hover:underline transition duration-200 cursor-pointer">
-              Products
-            </span>
-            {showProductDropdown && (
-              <div
-                className="absolute top-full left-0 mt-2 w-80 bg-[#A8BDA1] text-[#2F5233] shadow-lg rounded-md z-30"
-                onMouseEnter={handleProductMouseEnter}
-                onMouseLeave={handleProductMouseLeave}
-              >
-                <ul>
-                  <li>
-                    <Link
-                      to="/products/coir-peat"
-                      className="block px-4 py-2 hover:bg-[#F5F1E0]"
-                    >
-                      Coir Peat
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      to="/products/coir-peat-grow-bag"
-                      className="block px-4 py-2 hover:bg-[#F5F1E0]"
-                    >
-                      Coir Peat Grow Bag
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      to="/products/coir-garden-articles"
-                      className="block px-4 py-2 hover:bg-[#F5F1E0]"
-                    >
-                      Coir Garden Articles
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      to="/products/coir-geo-textiles"
-                      className="block px-4 py-2 hover:bg-[#F5F1E0]"
-                    >
-                      Coir Geo Textiles
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      to="/products/tender-coconut"
-                      className="block px-4 py-2 hover:bg-[#F5F1E0]"
-                    >
-                      Tender Coconut
-                    </Link>
-                  </li>
-                </ul>
-              </div>
-            )}
-          </div>
-
+            Products
+          </Link>
           <Link
             to="/resources"
             className="hover:text-[#1E3B2B] hover:underline transition duration-200"

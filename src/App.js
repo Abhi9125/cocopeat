@@ -56,6 +56,10 @@ import BenefitsSection from "./Components/BenefitsSection";
 import HowItWorks from "./Components/HowItWorks";
 import FeaturedProducts from "./Components/FeaturedProducts";
 import EnvironmentalImpact from "./Components/EnvironmentalImpact";
+import CocoPeatSection from "./Components/CocoPeatSection";
+import CocoPeatBenefits from "./Components/CocoPeatBenefits";
+import GrowingCrops from "./Components/GrowingCrops";
+import CocoPeatSuppliers from "./Components/CocoPeatSuppliers";
 
 function App() {
   return (
@@ -69,12 +73,15 @@ function App() {
             element={
               <>
                 <HeroSection />
-                <About />
-                <InteractiveProductCategories />
-                <BenefitsSection />
-                <HowItWorks />
-                <FeaturedProducts />
-                <EnvironmentalImpact />
+                {/* <About /> */}
+                <CocoPeatSection />
+                <CocoPeatSuppliers />
+                {/* <Products /> */}
+                {/* <InteractiveProductCategories /> */}
+                {/* <BenefitsSection /> */}
+                {/* <HowItWorks /> */}
+                {/* <FeaturedProducts /> */}
+                {/* <EnvironmentalImpact /> */}
                 {/* <Cocopeat />
                 <Products /> */}
               </>
@@ -82,6 +89,8 @@ function App() {
           />
           <Route path="/about-us" element={<About />} />
           <Route path="/products/:productId" element={<ProductPage />} />
+          {/* <Route path="/cocopeat/:productId" element={<ProductPage />} /> */}
+          <Route path="/products" element={<Products />} />
           <Route path="/contact" element={<ContactUs />} />
         </Routes>
       </div>

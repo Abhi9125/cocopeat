@@ -160,25 +160,192 @@
 
 // export default HeroSection;
 
+// import React from "react";
+// import { Link } from "react-router-dom";
+// import backgroundVideo from "../Images/videoplayback.mp4"; // Replace with your actual video path
+
+// const HeroSection = () => {
+//   return (
+//     <section className="relative w-full h-screen overflow-hidden">
+//       {/* Video Background */}
+//       <video
+//         className="absolute top-0 left-0 w-full h-full object-cover"
+//         src={backgroundVideo}
+//         autoPlay
+//         loop
+//         muted
+//         playsInline
+//       />
+
+//       {/* Overlay */}
+//       <div className="absolute top-0 left-0 w-full h-full bg-black opacity-20"></div>
+
+//       {/* Text Content */}
+//       <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-6">
+//         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-serif mb-4 text-[#F5F1E0]">
+//           Empowering Sustainable Growth
+//         </h1>
+//         <p className="text-lg md:text-xl font-sans max-w-2xl leading-relaxed mb-8 text-[#A8BDA1]">
+//           Discover the eco-friendly, sustainable choice for nurturing healthy
+//           plants with our premium cocopeat products.
+//         </p>
+
+//         {/* CTA Buttons */}
+//         <div className="flex space-x-4">
+//           {/* <Link
+//             to="/products"
+//             className="px-6 py-3 bg-[#2F5233] text-white font-sans text-lg rounded-lg hover:bg-[#1E3B2B] transition duration-300"
+//           >
+//             Shop Cocopeat Products
+//           </Link> */}
+//           <Link
+//             to="/about-us"
+//             className="px-6 py-3 bg-[#A8BDA1] text-[#2F5233] font-sans text-lg rounded-lg hover:bg-[#8AA68E] transition duration-300"
+//           >
+//             Learn More
+//           </Link>
+//         </div>
+//       </div>
+//     </section>
+//   );
+// };
+
+// export default HeroSection;
+
+// import React from "react";
+// import { Link } from "react-router-dom";
+// import backgroundVideo from "../Images/videoplayback.mp4"; // Replace with your actual video path
+
+// const HeroSection = () => {
+//   return (
+//     <section className="relative w-full h-screen overflow-hidden z-0">
+//       {/* Video Background */}
+//       <video
+//         className="absolute top-0 left-0 w-full h-full object-cover z-0"
+//         src={backgroundVideo}
+//         autoPlay
+//         loop
+//         muted
+//         playsInline
+//       />
+
+//       {/* Overlay */}
+//       <div className="absolute top-0 left-0 w-full h-full bg-black opacity-20 z-0"></div>
+
+//       {/* Text Content */}
+//       <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-6">
+//         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-serif mb-4 text-[#F5F1E0]">
+//           Empowering Sustainable Growth
+//         </h1>
+//         <p className="text-lg md:text-xl font-sans max-w-2xl leading-relaxed mb-8 text-[#A8BDA1]">
+//           Discover the eco-friendly, sustainable choice for nurturing healthy
+//           plants with our premium cocopeat products.
+//         </p>
+
+//         {/* CTA Buttons */}
+//         <div className="flex space-x-4">
+//           <Link
+//             to="/products"
+//             className="px-6 py-3 bg-[#2F5233] text-white font-sans text-lg rounded-lg hover:bg-[#1E3B2B] transition duration-300"
+//           >
+//             Shop Cocopeat Products
+//           </Link>
+//           <Link
+//             to="/about-us"
+//             className="px-6 py-3 bg-[#A8BDA1] text-[#2F5233] font-sans text-lg rounded-lg hover:bg-[#8AA68E] transition duration-300"
+//           >
+//             Learn More
+//           </Link>
+//         </div>
+//       </div>
+//     </section>
+//   );
+// };
+
+// export default HeroSection;
+
+// import React from "react";
+// import { Link } from "react-router-dom";
+// import { FaWhatsapp } from "react-icons/fa"; // Import WhatsApp icon
+// import backgroundVideo from "../Images/videoplayback.mp4"; // Replace with your actual video path
+
+// const HeroSection = () => {
+//   return (
+//     <section className="relative w-full h-screen overflow-hidden z-0">
+//       {/* Video Background */}
+//       <video
+//         className="absolute top-0 left-0 w-full h-full object-cover z-0"
+//         src={backgroundVideo}
+//         autoPlay
+//         loop
+//         muted
+//         playsInline
+//       />
+
+//       {/* Overlay */}
+//       <div className="absolute top-0 left-0 w-full h-full bg-black opacity-20 z-0"></div>
+
+//       {/* Text Content */}
+//       <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-6">
+//         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-serif mb-4 text-[#F5F1E0]">
+//           Empowering Sustainable Growth
+//         </h1>
+//         <p className="text-lg md:text-xl font-sans max-w-2xl leading-relaxed mb-8 text-[#A8BDA1]">
+//           Discover the eco-friendly, sustainable choice for nurturing healthy
+//           plants with our premium cocopeat products.
+//         </p>
+
+//         {/* CTA Buttons */}
+//         <div className="flex space-x-4">
+//           <Link
+//             to="/products"
+//             className="px-6 py-3 bg-[#2F5233] text-white font-sans text-lg rounded-lg hover:bg-[#1E3B2B] transition duration-300"
+//           >
+//             Shop Cocopeat Products
+//           </Link>
+//           <Link
+//             to="/about-us"
+//             className="px-6 py-3 bg-[#A8BDA1] text-[#2F5233] font-sans text-lg rounded-lg hover:bg-[#8AA68E] transition duration-300"
+//           >
+//             Learn More
+//           </Link>
+//         </div>
+//       </div>
+
+//       {/* WhatsApp Button */}
+//       <a
+//         href="https://wa.me/<your-phone-number>?text=Hi,%20I%20would%20like%20to%20know%20more%20about%20your%20products!"
+//         target="_blank"
+//         rel="noopener noreferrer"
+//         className="fixed bottom-6 right-6 bg-[#25D366] text-white flex items-center space-x-2 px-4 py-3 rounded-full shadow-lg hover:bg-[#1EBE54] transition duration-300 z-20"
+//       >
+//         <FaWhatsapp className="text-3xl" />
+//         <span className="font-sans text-lg font-medium">Message Us</span>
+//       </a>
+//     </section>
+//   );
+// };
+
+// export default HeroSection;
+
 import React from "react";
 import { Link } from "react-router-dom";
-import backgroundVideo from "../Images/videoplayback.mp4"; // Replace with your actual video path
+import { FaWhatsapp } from "react-icons/fa"; // Import WhatsApp icon
+import backgroundImage from "../Images/top-view-plants_23-2148175929.avif"; // Replace with your actual image path
 
 const HeroSection = () => {
   return (
-    <section className="relative w-full h-screen overflow-hidden">
-      {/* Video Background */}
-      <video
-        className="absolute top-0 left-0 w-full h-full object-cover"
-        src={backgroundVideo}
-        autoPlay
-        loop
-        muted
-        playsInline
-      />
-
+    <section
+      className="relative w-full h-screen overflow-hidden z-0"
+      style={{
+        backgroundImage: `url(${backgroundImage})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
       {/* Overlay */}
-      <div className="absolute top-0 left-0 w-full h-full bg-black opacity-20"></div>
+      <div className="absolute top-0 left-0 w-full h-full bg-black opacity-20 z-0"></div>
 
       {/* Text Content */}
       <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-6">
@@ -196,7 +363,7 @@ const HeroSection = () => {
             to="/products"
             className="px-6 py-3 bg-[#2F5233] text-white font-sans text-lg rounded-lg hover:bg-[#1E3B2B] transition duration-300"
           >
-            Shop Cocopeat Products
+            Shop Poys Coco Products
           </Link>
           <Link
             to="/about-us"
@@ -206,6 +373,17 @@ const HeroSection = () => {
           </Link>
         </div>
       </div>
+
+      {/* WhatsApp Button */}
+      <a
+        href="https://wa.me/<your-phone-number>?text=Hi,%20I%20would%20like%20to%20know%20more%20about%20your%20products!"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="fixed bottom-6 right-6 bg-[#25D366] text-white flex items-center space-x-2 px-4 py-3 rounded-full shadow-lg hover:bg-[#1EBE54] transition duration-300 z-20"
+      >
+        <FaWhatsapp className="text-3xl" />
+        <span className="font-sans text-lg font-medium">Message Us</span>
+      </a>
     </section>
   );
 };

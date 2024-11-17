@@ -1,8 +1,8 @@
 import React from "react";
 import { FaSeedling, FaExpand, FaWater } from "react-icons/fa"; // Icons for visual appeal
 import tutorialVideo from "../Images/videoplayback.mp4"; // Replace with your actual video path
-import cocoPeatBricksImage from "../Images/banner-1.jpg"; // Replace with actual image paths
-import growBagsImage from "../Images/banner-1.jpg";
+import cocoPeatBricksImage from "../Images/Products/Coir Peat.png"; // Replace with actual image paths
+import growBagsImage from "../Images/Products/Coir Peat Grow Bag.png";
 
 const steps = [
   {
@@ -92,7 +92,7 @@ const HowItWorks = () => {
         </div>
 
         {/* Video Tutorial */}
-        <div className="text-center">
+        {/* <div className="text-center">
           <h3 className="text-3xl font-semibold text-[#2F5233] font-serif mb-6">
             Watch Our Tutorial
           </h3>
@@ -101,7 +101,7 @@ const HowItWorks = () => {
             src={tutorialVideo}
             controls
           ></video>
-        </div>
+        </div> */}
       </div>
     </section>
   );

@@ -104,11 +104,26 @@ import founderImage from "../Images/banner-1.jpg";
 
 const About = () => {
   return (
-    <section className="bg-[#F5F1E0] py-16 px-6">
+    <section className="bg-[#F5F1E0] min-h-screen">
+      {/* Breadcrumb Section */}
+      <div
+        className="bg-cover bg-center h-40 flex items-center justify-center"
+        style={{
+          backgroundImage: `url('https://via.placeholder.com/1200x400?text=Products')`,
+        }}
+      >
+        <nav className="text-sm text-white">
+          <Link to="/" className="hover:underline">
+            Home
+          </Link>{" "}
+          <span className="text-white px-2">›</span>
+          <span className="font-semibold">About-us</span>
+        </nav>
+      </div>
       <div className="container mx-auto max-w-5xl text-center">
         {/* Mission Statement */}
         <h2 className="text-4xl font-bold text-[#2F5233] font-serif mb-6">
-          Dedicated to Sustainable Farming Since 1998
+          Poys Coco Dedicated to Sustainable Farming Since 1998
         </h2>
         <p className="text-lg text-[#6B4F4F] font-sans leading-relaxed mb-10">
           Our journey began with a vision to create eco-friendly growing
