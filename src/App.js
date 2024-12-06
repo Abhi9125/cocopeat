@@ -1,46 +1,52 @@
+// // src/App.js
 // import React from "react";
 // import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 // import Header from "./Components/Header";
 // import HeroSection from "./Components/HeroSection";
 // import About from "./Components/About";
 // import Products from "./Components/Products";
-// // import Footer from "./Components/Footer";
-// import ProductPage from "./Components/Coconut"; // Individual product page component
-// // import Contact from "./Components/Contact"; // Contact page component
+// import Footer from "./Components/Footer";
+// import ProductPage from "./Components/ProductPage";
+
+// import ContactUs from "./Components/ContactUs";
+
+// import CocoPeatSection from "./Components/CocoPeatSection";
+// import CocoPeatSuppliers from "./Components/CocoPeatSuppliers";
+// import Resources from "./Components/Resources";
 
 // function App() {
 //   return (
 //     <Router>
 //       <Header />
-//       {/* Main Content Area */}
+//       {/* <Breadcrumb /> */}
 //       <div className="pt-16 pb-16">
-//         {" "}
-//         {/* Adjust padding to fit fixed header/footer */}
 //         <Routes>
 //           <Route
 //             path="/"
 //             element={
 //               <>
 //                 <HeroSection />
-//                 <About />
-//                 <Products />
+//                 <CocoPeatSection />
+//                 <CocoPeatSuppliers />
 //               </>
 //             }
 //           />
-//           <Route path="/products/:productName" element={<ProductPage />} />{" "}
-//           {/* Dynamic route for each product */}
-//           {/* <Route path="/contact" element={<Contact />} /> Contact page route */}
+//           <Route path="/about-us" element={<About />} />
+//           <Route path="/products/:productId" element={<ProductPage />} />
+//           {/* <Route path="/cocopeat/:productId" element={<ProductPage />} /> */}
+//           <Route path="/products" element={<Products />} />
+//           <Route path="/resources" element={<Resources />} />
+//           <Route path="/contact" element={<ContactUs />} />
 //         </Routes>
 //       </div>
-//       {/* <Footer /> */}
+//       <Footer />
 //     </Router>
 //   );
 // }
 
 // export default App;
 
-// src/App.js
-import React from "react";
+import React, { useState } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Header from "./Components/Header";
 import HeroSection from "./Components/HeroSection";
@@ -48,24 +54,18 @@ import About from "./Components/About";
 import Products from "./Components/Products";
 import Footer from "./Components/Footer";
 import ProductPage from "./Components/ProductPage";
-import Cocopeat from "./Components/Cocopeat";
 import ContactUs from "./Components/ContactUs";
-import Breadcrumb from "./Components/Breadcrumb";
-import InteractiveProductCategories from "./Components/InteractiveProductCategories";
-import BenefitsSection from "./Components/BenefitsSection";
-import HowItWorks from "./Components/HowItWorks";
-import FeaturedProducts from "./Components/FeaturedProducts";
-import EnvironmentalImpact from "./Components/EnvironmentalImpact";
 import CocoPeatSection from "./Components/CocoPeatSection";
-import CocoPeatBenefits from "./Components/CocoPeatBenefits";
-import GrowingCrops from "./Components/GrowingCrops";
 import CocoPeatSuppliers from "./Components/CocoPeatSuppliers";
+import Resources from "./Components/Resources";
+import ProductDetails from "./Components/ProductDetails";
 
 function App() {
+  const [selectedCategory, setSelectedCategory] = useState("");
+
   return (
     <Router>
-      <Header />
-      {/* <Breadcrumb /> */}
+      <Header setSelectedCategory={setSelectedCategory} />
       <div className="pt-16 pb-16">
         <Routes>
           <Route
@@ -73,24 +73,27 @@ function App() {
             element={
               <>
                 <HeroSection />
-                {/* <About /> */}
                 <CocoPeatSection />
                 <CocoPeatSuppliers />
-                {/* <Products /> */}
-                {/* <InteractiveProductCategories /> */}
-                {/* <BenefitsSection /> */}
-                {/* <HowItWorks /> */}
-                {/* <FeaturedProducts /> */}
-                {/* <EnvironmentalImpact /> */}
-                {/* <Cocopeat />
-                <Products /> */}
               </>
             }
           />
           <Route path="/about-us" element={<About />} />
           <Route path="/products/:productId" element={<ProductPage />} />
-          {/* <Route path="/cocopeat/:productId" element={<ProductPage />} /> */}
-          <Route path="/products" element={<Products />} />
+          <Route
+            path="/products"
+            element={
+              <Products
+                selectedCategory={selectedCategory} // Pass selectedCategory
+              />
+            }
+          />
+          <Route
+            path="/product-details"
+            element={<ProductDetails category={selectedCategory} />}
+          />
+
+          <Route path="/resources" element={<Resources />} />
           <Route path="/contact" element={<ContactUs />} />
         </Routes>
       </div>
