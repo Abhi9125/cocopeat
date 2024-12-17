@@ -1,28 +1,55 @@
 import React from "react";
-import { FaLeaf, FaTint, FaBug } from "react-icons/fa";
+import {
+  FaLeaf,
+  FaTint,
+  FaBug,
+  FaSeedling,
+  FaWater,
+  FaAppleAlt,
+} from "react-icons/fa";
 
 const CocoPeatBenefits = () => {
   const benefits = [
     {
       icon: <FaLeaf className="text-[#2F5233]" />,
-      title: "Eco-Friendly",
-      description: "Coco Peat is an eco-friendly medium for healthy crops.",
+      title: "Eco-Friendly Growing Medium",
+      description:
+        "Coco Peat is a proven eco-friendly medium to grow healthy crops for bountiful yields.",
     },
     {
-      icon: <FaTint className="text-[#2F5233]" />,
-      title: "Water Retention",
-      description: "Long-term water-holding capacity for optimal growth.",
+      icon: <FaSeedling className="text-[#2F5233]" />,
+      title: "Increases Productivity and Quality",
+      description:
+        "Coco Peat enhances farm productivity and improves crop quality.",
     },
     {
       icon: <FaBug className="text-[#2F5233]" />,
-      title: "Reduced Pests",
+      title: "Reduces Pests and Disease",
       description:
-        "Coco Peat reduces pests and diseases, ensuring healthy crops.",
+        "Coco Peat reduces pests and diseases, ensuring healthier crops.",
+    },
+    {
+      icon: <FaTint className="text-[#2F5233]" />,
+      title: "Long-Term Water Retention",
+      description:
+        "Provides excellent water-holding capacity for optimal crop growth at all stages.",
+    },
+    {
+      icon: <FaWater className="text-[#2F5233]" />,
+      title: "High Porosity",
+      description:
+        "Ensures proper aeration and root health, promoting strong plant development.",
+    },
+    {
+      icon: <FaAppleAlt className="text-[#2F5233]" />,
+      title: "Suitable for Various Crops",
+      description:
+        "Poyscoco's coco peat is perfect for hydroponic systems, cucumbers, tomatoes, blueberries, strawberries, ginger, and more.",
     },
   ];
 
   return (
-    <div>
+    <div className="py-10 px-6">
       <h2 className="text-2xl md:text-3xl font-bold font-serif text-center mb-6 text-[#2F5233]">
         Benefits of Growing in Coco Peat
       </h2>

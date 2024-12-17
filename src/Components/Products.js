@@ -1,89 +1,33 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
-import tenderCoconut from "../Images/Products/tender coco.png";
-import coconut from "../Images/Products/coconut.png";
-import drycoconut from "../Images/Products/dry coco.png";
-import desiccatedcoconut from "../Images/Products/desiccated.png";
-import coconutoil from "../Images/Products/oil.png";
-import huskchips from "../Images/Products/husk.png";
-import coirfiber from "../Images/Products/coir fiber.png";
-import curledcoir from "../Images/Products/curled coir.png";
-import coiryarn from "../Images/Products/yarn.png";
-import coirmats from "../Images/Products/mats.png";
-import coirpeat from "../Images/Products/Coir Peat.png";
-import peatgrowbag from "../Images/Products/Coir Peat Grow Bag.png";
-import gardenarticles from "../Images/Products/Coir Garden Articles.png";
-import geotextiles from "../Images/Products/Coir Geo Textiles.png";
+import CocoPeatImage from "../Images/Products/Coir Peat.png";
+import GrowBagImage from "../Images/Products/Coir Peat Grow Bag.png";
+import EasyGrowBagImage from "../Images/Products/Coir Garden Articles.png";
+import TenderCoconutImage from "../Images/Products/tender coco.png";
+import CoconutImage from "../Images/Products/coconut.png";
+import CoirFiberImage from "../Images/Products/coir fiber.png";
+import CoirYarnImage from "../Images/Products/yarn.png";
 
 const Products = () => {
   const navigate = useNavigate();
 
+  // Product Data
   const products = [
-    {
-      name: "Coir Peat",
-      description: "Ideal for soil conditioning",
-      imageUrl: coirpeat,
-    },
-    {
-      name: "Coir Peat Grow Bag",
-      description: "Perfect for growing plants",
-      imageUrl: peatgrowbag,
-    },
-    {
-      name: "Coir Garden Articles",
-      description: "Various garden articles",
-      imageUrl: gardenarticles,
-    },
-    {
-      name: "Coir Geo Textiles",
-      description: "Used for erosion control",
-      imageUrl: geotextiles,
-    },
-    {
-      name: "Tender Coconut",
-      description: "Fresh and natural",
-      imageUrl: tenderCoconut,
-    },
-    { name: "Coconut", description: "Whole and fresh", imageUrl: coconut },
-    {
-      name: "Dry Coconut",
-      description: "Ideal for cooking and oil extraction",
-      imageUrl: drycoconut,
-    },
-    {
-      name: "Desiccated Coconut",
-      description: "Perfect for baking and cooking",
-      imageUrl: desiccatedcoconut,
-    },
-    {
-      name: "Coconut Oil",
-      description: "Pure coconut oil",
-      imageUrl: coconutoil,
-    },
-    {
-      name: "Coconut Husk Chips",
-      description: "Ideal for potting",
-      imageUrl: huskchips,
-    },
-    {
-      name: "Coir Fiber",
-      description: "Used for various applications",
-      imageUrl: coirfiber,
-    },
-    {
-      name: "Curled Coir",
-      description: "Used in mattress manufacturing",
-      imageUrl: curledcoir,
-    },
-    {
-      name: "Coir Yarn",
-      description: "High-quality coir yarn",
-      imageUrl: coiryarn,
-    },
-    { name: "Coir Mats", description: "Eco-friendly mats", imageUrl: coirmats },
+    { name: "Coco Peat", image: CocoPeatImage },
+    { name: "Compressed Blocks", image: CocoPeatImage },
+    { name: "Grow Bag", image: GrowBagImage },
+    { name: "Easy Grow Bags", image: EasyGrowBagImage },
+    { name: "Bags", image: EasyGrowBagImage },
+    { name: "Coir Fiber", image: CoirFiberImage },
+    { name: "Coir Yarn", image: CoirYarnImage },
+    { name: "Tender Coconut", image: TenderCoconutImage },
+    { name: "Coconut", image: CoconutImage },
   ];
+
+  // Handle navigation to product details
   const handleProductClick = (productName) => {
-    navigate(`/products/${productName.replace(/\s+/g, "-").toLowerCase()}`);
+    const productId = productName.replace(/\s+/g, "-").toLowerCase(); // Format product name as URL-safe
+    navigate(`/products/${productId}`);
   };
 
   return (
@@ -104,50 +48,47 @@ const Products = () => {
         </nav>
       </div>
 
-      {/* Header Section */}
-      <div className="container mx-auto text-center py-10 px-4 sm:px-6">
+      {/* Header */}
+      <div className="container mx-auto text-center py-8">
         <h2 className="text-3xl sm:text-4xl font-bold text-[#2F5233] font-serif mb-4">
           Our Products
         </h2>
         <p className="text-base sm:text-lg text-[#6B4F4F] max-w-3xl mx-auto">
-          Explore our wide range of eco-friendly and sustainable cocopeat
-          products designed to enhance soil health and plant growth.
+          Explore our wide range of high-quality, eco-friendly coconut and coir
+          products designed to meet your agricultural and horticultural needs.
         </p>
       </div>
 
       {/* Product Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 container mx-auto px-4 sm:px-6">
+      <div className="container mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-6 py-8">
         {products.map((product, index) => (
           <div
             key={index}
-            className="border border-[#6B4F4F] bg-[#FFFFFF] rounded-lg shadow-lg cursor-pointer transform transition duration-300 hover:scale-105"
+            className="bg-white border border-[#A8BDA1] rounded-lg shadow-md overflow-hidden cursor-pointer hover:shadow-lg transition-transform duration-300 hover:scale-105"
             onClick={() => handleProductClick(product.name)}
           >
             <img
-              src={product.imageUrl}
+              src={product.image}
               alt={product.name}
-              className="w-full h-40 sm:h-60 object-cover rounded-t-lg"
+              className="w-full h-48 object-cover"
             />
             <div className="p-4 text-center">
-              <h3 className="text-xl sm:text-2xl font-semibold text-[#2F5233] font-serif">
+              <h3 className="text-2xl font-semibold text-[#2F5233] font-serif">
                 {product.name}
               </h3>
-              <p className="mt-2 text-[#6B4F4F] font-sans text-sm sm:text-base">
-                {product.description}
-              </p>
             </div>
           </div>
         ))}
       </div>
 
-      {/* CTA Section */}
-      <div className="text-center mt-12 px-4">
-        <h4 className="text-lg sm:text-xl font-bold text-[#2F5233] mb-4">
-          Interested in bulk orders?
+      {/* CTA */}
+      <div className="text-center py-8">
+        <h4 className="text-xl font-bold text-[#2F5233] mb-4">
+          Looking for more information?
         </h4>
         <Link
           to="/contact"
-          className="px-6 py-3 bg-[#2F5233] text-white text-lg font-sans rounded-lg hover:bg-[#1E3B2B] transition duration-300"
+          className="px-6 py-3 bg-[#2F5233] text-white rounded-lg hover:bg-[#1E3B2B] transition duration-300"
         >
           Contact Us
         </Link>

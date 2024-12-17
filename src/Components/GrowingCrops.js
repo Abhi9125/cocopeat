@@ -16,7 +16,8 @@ const GrowingCrops = () => {
       {/* Content */}
       <div className="w-full md:w-1/2 text-[#2F5233]">
         <h2 className="text-2xl md:text-3xl font-bold font-serif mb-4">
-          Coco Peat for Growing Crops
+          <span className="text-3xl">Why Choose</span> Coco Peat for Growing
+          Crops
         </h2>
         <p className="text-base md:text-lg leading-relaxed font-sans">
           Coco Peat is proven as the superior growing medium among other

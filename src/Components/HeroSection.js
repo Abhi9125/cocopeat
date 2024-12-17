@@ -52,7 +52,7 @@ const HeroSection = () => {
         className="fixed bottom-4 right-4 bg-[#25D366] text-white flex items-center space-x-2 px-4 py-3 rounded-full shadow-lg hover:bg-[#1EBE54] transition duration-300 z-20"
       >
         <FaWhatsapp className="text-xl md:text-3xl" />
-        <span className="text-sm md:text-lg font-medium">Message Us</span>
+        <span className="text-sm md:text-lg font-medium">Connect with us</span>
       </a>
     </section>
   );
