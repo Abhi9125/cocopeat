@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 import {
   FaLeaf,
   FaTint,
@@ -49,15 +50,27 @@ const CocoPeatBenefits = () => {
   ];
 
   return (
-    <div className="py-10 px-6">
+    <motion.div
+      className="py-10 px-6"
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      variants={{
+        hidden: { opacity: 0 },
+        visible: { opacity: 1 },
+      }}
+      transition={{ duration: 1 }}
+    >
       <h2 className="text-2xl md:text-3xl font-bold font-serif text-center mb-6 text-[#2F5233]">
         Benefits of Growing in Coco Peat
       </h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
         {benefits.map((benefit, index) => (
-          <div
+          <motion.div
             key={index}
             className="flex flex-col items-center text-center p-6 bg-white rounded-lg shadow-md"
+            whileHover={{ scale: 1.05 }}
+            transition={{ type: "spring", stiffness: 200 }}
           >
             <div className="text-3xl md:text-4xl mb-3">{benefit.icon}</div>
             <h3 className="text-lg md:text-xl font-semibold text-[#2F5233] mb-2">
@@ -66,10 +79,10 @@ const CocoPeatBenefits = () => {
             <p className="text-sm md:text-base text-[#6B4F4F]">
               {benefit.description}
             </p>
-          </div>
+          </motion.div>
         ))}
       </div>
-    </div>
+    </motion.div>
   );
 };
 

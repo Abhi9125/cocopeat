@@ -1,504 +1,201 @@
-// import React, { useState, useEffect } from "react";
-// import { Link, useNavigate } from "react-router-dom";
-
-// const Header = ({ setSelectedCategory }) => {
-//   const [isScrolled, setIsScrolled] = useState(false);
-//   const [isDropdownVisible, setIsDropdownVisible] = useState(false);
-//   const [dropdownTimeout, setDropdownTimeout] = useState(null);
-//   const navigate = useNavigate();
-
-//   // Handle scroll behavior
-//   useEffect(() => {
-//     const handleScroll = () => {
-//       setIsScrolled(window.scrollY > 50);
-//     };
-//     window.addEventListener("scroll", handleScroll);
-//     return () => {
-//       window.removeEventListener("scroll", handleScroll);
-//     };
-//   }, []);
-
-//   // Show dropdown on hover with a slight delay
-//   const showDropdown = () => {
-//     if (dropdownTimeout) clearTimeout(dropdownTimeout);
-//     setIsDropdownVisible(true);
-//   };
-
-//   // Hide dropdown with a delay to allow interaction
-//   const hideDropdown = () => {
-//     const timeout = setTimeout(() => setIsDropdownVisible(false), 200);
-//     setDropdownTimeout(timeout);
-//   };
-
-//   const handleCategoryClick = (category) => {
-//     setSelectedCategory(category);
-//     navigate("/product-details"); // Navigate to the product details page
-//     setIsDropdownVisible(false); // Hide the dropdown
-//   };
-
-//   return (
-//     <header
-//       className={`fixed top-0 w-full z-50 shadow-md transition-transform duration-300 ${
-//         isScrolled ? "bg-[#FFFFFF]" : "bg-white"
-//       }`}
-//     >
-//       {/* Logo Section */}
-//       <div
-//         className={`container mx-auto flex items-center justify-center py-4 transition-all duration-300 ${
-//           isScrolled ? "opacity-0 h-0 overflow-hidden" : "opacity-100 h-auto"
-//         }`}
-//       >
-//         <Link to="/" className="text-3xl font-bold font-serif text-[#2F5233]">
-//           POYS COCO EXPORTS
-//         </Link>
-//       </div>
-
-//       {/* Navigation Links */}
-//       <div className="container mx-auto relative">
-//         <nav className="flex justify-center space-x-8 font-sans text-[#2F5233] text-lg py-2">
-//           <Link
-//             to="/"
-//             className="hover:text-[#1E3B2B] hover:underline transition duration-200"
-//           >
-//             Home
-//           </Link>
-//           <div
-//             className="relative group"
-//             onMouseEnter={showDropdown}
-//             onMouseLeave={hideDropdown}
-//           >
-//             <span className="hover:text-[#1E3B2B] hover:underline transition duration-200 cursor-pointer">
-//               Products
-//             </span>
-//             {isDropdownVisible && (
-//               <div
-//                 className="absolute left-0 top-full mt-2 bg-[#2F5233] text-white rounded-lg shadow-lg p-4 w-[60vw] max-w-2xl grid grid-cols-2 md:grid-cols-3 gap-4 z-50"
-//                 onMouseEnter={showDropdown} // Prevent hiding when interacting with dropdown
-//                 onMouseLeave={hideDropdown} // Allow hiding when leaving the dropdown
-//               >
-//                 <div>
-//                   <h4 className="font-bold text-lg mb-2">Coco Peat</h4>
-//                   <ul className="space-y-1 text-sm">
-//                     <li
-//                       onClick={() => handleCategoryClick("Compressed Blocks")}
-//                       className="hover:text-[#A8BDA1] transition duration-200 cursor-pointer"
-//                     >
-//                       Compressed Blocks
-//                     </li>
-//                     <li
-//                       onClick={() => handleCategoryClick("Grow Bag")}
-//                       className="hover:text-[#A8BDA1] transition duration-200 cursor-pointer"
-//                     >
-//                       Grow Bag
-//                     </li>
-//                     <li
-//                       onClick={() => handleCategoryClick("Easy Grow Bags")}
-//                       className="hover:text-[#A8BDA1] transition duration-200 cursor-pointer"
-//                     >
-//                       Easy Grow Bags
-//                     </li>
-//                     <li
-//                       onClick={() => handleCategoryClick("Bags")}
-//                       className="hover:text-[#A8BDA1] transition duration-200 cursor-pointer"
-//                     >
-//                       Bags
-//                     </li>
-//                   </ul>
-//                 </div>
-//                 <div>
-//                   <h4 className="font-bold text-lg mb-2">Coconut Fiber</h4>
-//                   <ul className="space-y-1 text-sm">
-//                     <li
-//                       onClick={() => handleCategoryClick("Coir Fiber")}
-//                       className="hover:text-[#A8BDA1] transition duration-200 cursor-pointer"
-//                     >
-//                       Coir Fiber
-//                     </li>
-//                     <li
-//                       onClick={() => handleCategoryClick("Coir Yarn")}
-//                       className="hover:text-[#A8BDA1] transition duration-200 cursor-pointer"
-//                     >
-//                       Coir Yarn
-//                     </li>
-//                   </ul>
-//                 </div>
-//                 <div>
-//                   <h4 className="font-bold text-lg mb-2">Coconut</h4>
-//                   <ul className="space-y-1 text-sm">
-//                     <li
-//                       onClick={() => handleCategoryClick("Tender Coconut")}
-//                       className="hover:text-[#A8BDA1] transition duration-200 cursor-pointer"
-//                     >
-//                       Tender Coconut
-//                     </li>
-//                     <li
-//                       onClick={() => handleCategoryClick("Coconut")}
-//                       className="hover:text-[#A8BDA1] transition duration-200 cursor-pointer"
-//                     >
-//                       Coconut
-//                     </li>
-//                   </ul>
-//                 </div>
-//               </div>
-//             )}
-//           </div>
-//           <Link
-//             to="/resources"
-//             className="hover:text-[#1E3B2B] hover:underline transition duration-200"
-//           >
-//             Resources
-//           </Link>
-//           <Link
-//             to="/about-us"
-//             className="hover:text-[#1E3B2B] hover:underline transition duration-200"
-//           >
-//             About
-//           </Link>
-//           <Link
-//             to="/contact"
-//             className="hover:text-[#1E3B2B] hover:underline transition duration-200 rounded-xl border bg-green-300 px-5"
-//           >
-//             Get in Touch
-//           </Link>
-//         </nav>
-//       </div>
-//       <hr className="border-t border-[#A8BDA1]" />
-//     </header>
-//   );
-// };
-
-// export default Header;
-
-// import React, { useState, useEffect } from "react";
-// import { Link, useNavigate } from "react-router-dom";
-
-// const Header = ({ setSelectedCategory }) => {
-//   const [isScrolled, setIsScrolled] = useState(false);
-//   const [isDropdownVisible, setIsDropdownVisible] = useState(false);
-//   const [dropdownTimeout, setDropdownTimeout] = useState(null);
-//   const navigate = useNavigate();
-
-//   // Handle scroll behavior
-//   useEffect(() => {
-//     const handleScroll = () => {
-//       setIsScrolled(window.scrollY > 50);
-//     };
-//     window.addEventListener("scroll", handleScroll);
-//     return () => {
-//       window.removeEventListener("scroll", handleScroll);
-//     };
-//   }, []);
-
-//   // Show dropdown on hover with a slight delay
-//   const showDropdown = () => {
-//     if (dropdownTimeout) clearTimeout(dropdownTimeout);
-//     setIsDropdownVisible(true);
-//   };
-
-//   // Hide dropdown with a delay to allow interaction
-//   const hideDropdown = () => {
-//     const timeout = setTimeout(() => setIsDropdownVisible(false), 200);
-//     setDropdownTimeout(timeout);
-//   };
-
-//   const handleCategoryClick = (category) => {
-//     setSelectedCategory(category);
-//     navigate("/product-details"); // Navigate to the product details page
-//     setIsDropdownVisible(false); // Hide the dropdown
-//   };
-
-//   return (
-//     <header
-//       className={`fixed top-0 w-full z-50 shadow-md transition-all duration-300 ${
-//         isScrolled ? "bg-[#FFFFFF]" : "bg-white"
-//       }`}
-//     >
-//       <div className="container mx-auto flex items-center justify-between py-4">
-//         {/* Logo */}
-//         <Link to="/" className="text-3xl font-bold font-serif text-[#2F5233]">
-//           POYS COCO EXPORTS
-//         </Link>
-
-//         {/* Spacer */}
-//         <div className="flex-1"></div>
-
-//         {/* Navigation Links */}
-//         <nav className="flex items-center space-x-8 font-sans text-[#2F5233] text-lg">
-//           <Link
-//             to="/"
-//             className="hover:text-[#1E3B2B] hover:underline transition duration-200"
-//           >
-//             Home
-//           </Link>
-//           <div
-//             className="relative group"
-//             onMouseEnter={showDropdown}
-//             onMouseLeave={hideDropdown}
-//           >
-//             <span className="hover:text-[#1E3B2B] hover:underline transition duration-200 cursor-pointer">
-//               Products
-//             </span>
-//             {isDropdownVisible && (
-//               <div
-//                 className="absolute left-0 top-full mt-2 bg-[#2F5233] text-white rounded-lg shadow-lg p-4 w-[60vw] max-w-2xl grid grid-cols-2 md:grid-cols-3 gap-4 z-50"
-//                 onMouseEnter={showDropdown}
-//                 onMouseLeave={hideDropdown}
-//               >
-//                 <div>
-//                   <h4 className="font-bold text-lg mb-2">Coco Peat</h4>
-//                   <ul className="space-y-1 text-sm">
-//                     <li
-//                       onClick={() => handleCategoryClick("Compressed Blocks")}
-//                       className="hover:text-[#A8BDA1] transition duration-200 cursor-pointer"
-//                     >
-//                       Compressed Blocks
-//                     </li>
-//                     <li
-//                       onClick={() => handleCategoryClick("Grow Bag")}
-//                       className="hover:text-[#A8BDA1] transition duration-200 cursor-pointer"
-//                     >
-//                       Grow Bag
-//                     </li>
-//                     <li
-//                       onClick={() => handleCategoryClick("Easy Grow Bags")}
-//                       className="hover:text-[#A8BDA1] transition duration-200 cursor-pointer"
-//                     >
-//                       Easy Grow Bags
-//                     </li>
-//                     <li
-//                       onClick={() => handleCategoryClick("Bags")}
-//                       className="hover:text-[#A8BDA1] transition duration-200 cursor-pointer"
-//                     >
-//                       Bags
-//                     </li>
-//                   </ul>
-//                 </div>
-//                 <div>
-//                   <h4 className="font-bold text-lg mb-2">Coconut Fiber</h4>
-//                   <ul className="space-y-1 text-sm">
-//                     <li
-//                       onClick={() => handleCategoryClick("Coir Fiber")}
-//                       className="hover:text-[#A8BDA1] transition duration-200 cursor-pointer"
-//                     >
-//                       Coir Fiber
-//                     </li>
-//                     <li
-//                       onClick={() => handleCategoryClick("Coir Yarn")}
-//                       className="hover:text-[#A8BDA1] transition duration-200 cursor-pointer"
-//                     >
-//                       Coir Yarn
-//                     </li>
-//                   </ul>
-//                 </div>
-//                 <div>
-//                   <h4 className="font-bold text-lg mb-2">Coconut</h4>
-//                   <ul className="space-y-1 text-sm">
-//                     <li
-//                       onClick={() => handleCategoryClick("Tender Coconut")}
-//                       className="hover:text-[#A8BDA1] transition duration-200 cursor-pointer"
-//                     >
-//                       Tender Coconut
-//                     </li>
-//                     <li
-//                       onClick={() => handleCategoryClick("Coconut")}
-//                       className="hover:text-[#A8BDA1] transition duration-200 cursor-pointer"
-//                     >
-//                       Coconut
-//                     </li>
-//                   </ul>
-//                 </div>
-//               </div>
-//             )}
-//           </div>
-//           <Link
-//             to="/resources"
-//             className="hover:text-[#1E3B2B] hover:underline transition duration-200"
-//           >
-//             Resources
-//           </Link>
-//           <Link
-//             to="/about-us"
-//             className="hover:text-[#1E3B2B] hover:underline transition duration-200"
-//           >
-//             About
-//           </Link>
-//           <Link
-//             to="/contact"
-//             className="hover:text-[#1E3B2B] hover:underline transition duration-200 rounded-xl border bg-green-300 px-5"
-//           >
-//             Get in Touch
-//           </Link>
-//         </nav>
-//       </div>
-//       <hr className="border-t border-[#A8BDA1]" />
-//     </header>
-//   );
-// };
-
-// export default Header;
-
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { motion, AnimatePresence } from "framer-motion";
+import { FiMenu, FiX } from "react-icons/fi";
 
 const Header = ({ setSelectedCategory }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isDropdownVisible, setIsDropdownVisible] = useState(false);
-  const [dropdownTimeout, setDropdownTimeout] = useState(null);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const navigate = useNavigate();
 
   // Handle scroll behavior
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
+    const handleScroll = () => setIsScrolled(window.scrollY > 50);
     window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  // Show dropdown on hover with a slight delay
-  const showDropdown = () => {
-    if (dropdownTimeout) clearTimeout(dropdownTimeout);
-    setIsDropdownVisible(true);
-  };
-
-  // Hide dropdown with a delay to allow interaction
-  const hideDropdown = () => {
-    const timeout = setTimeout(() => setIsDropdownVisible(false), 200);
-    setDropdownTimeout(timeout);
-  };
 
   const handleCategoryClick = (category) => {
     setSelectedCategory(category);
-    navigate("/product-details"); // Navigate to the product details page
-    setIsDropdownVisible(false); // Hide the dropdown
+    navigate("/product-details");
+    setIsDropdownVisible(false);
+    setIsMobileMenuOpen(false);
   };
+
+  const productCategories = [
+    {
+      name: "Coco Peat",
+      subcategories: [
+        "Compressed Blocks",
+        "Grow Bag",
+        "Easy Grow Bags",
+        "Bags",
+      ],
+    },
+    { name: "Coconut Fiber", subcategories: ["Coir Fiber", "Coir Yarn"] },
+    { name: "Coconut Products", subcategories: ["Tender Coconut", "Coconut"] },
+  ];
 
   return (
     <header
-      className={`fixed top-0 w-full z-50 shadow-md transition-all duration-300 ${
-        isScrolled ? "bg-[#FFFFFF]" : "bg-white"
+      className={`fixed top-0 w-full z-50 transition-all duration-300 ${
+        isScrolled ? "bg-white shadow-md" : "bg-white"
       }`}
     >
-      <div className="container mx-auto flex items-center justify-between py-4">
+      <div className="container mx-auto flex items-center justify-between py-4 px-6">
         {/* Logo */}
-        <Link to="/" className="text-3xl font-bold font-serif text-[#2F5233]">
+        <Link
+          to="/"
+          className="text-3xl font-bold font-serif text-[#2F5233] hover:scale-105 transition-transform"
+        >
           POYS COCO EXPORTS
         </Link>
 
-        {/* Spacer */}
-        <div className="flex-1"></div>
-
-        {/* Navigation Links */}
-        <nav className="flex items-center space-x-8 font-sans text-[#2F5233] text-lg">
-          <Link
-            to="/"
-            className="hover:text-[#1E3B2B] hover:underline transition duration-200"
-          >
+        {/* Desktop Navigation */}
+        <nav className="hidden md:flex items-center space-x-8 text-[#2F5233]">
+          <Link to="/" className="hover:text-[#1E3B2B] transition duration-200">
             Home
           </Link>
+
+          {/* Products Dropdown */}
           <div
             className="relative group"
-            onMouseEnter={showDropdown}
-            onMouseLeave={hideDropdown}
+            onMouseEnter={() => setIsDropdownVisible(true)}
+            onMouseLeave={() => setIsDropdownVisible(false)}
           >
-            <span className="hover:text-[#1E3B2B] hover:underline transition duration-200 cursor-pointer">
+            <span className="cursor-pointer hover:text-[#1E3B2B] transition duration-200">
               Products
             </span>
-            {isDropdownVisible && (
-              <div
-                className="absolute right-[-20rem] top-full mt-4 bg-[#2F5233] text-white rounded-lg shadow-lg p-4 w-[80vw] max-w-2xl grid grid-cols-2 md:grid-cols-3 gap-4 z-50"
-                onMouseEnter={showDropdown}
-                onMouseLeave={hideDropdown}
-              >
-                <div>
-                  <h4 className="font-bold text-lg mb-2">Coco Peat</h4>
-                  <ul className="space-y-1 text-sm">
-                    <li
-                      onClick={() => handleCategoryClick("Compressed Blocks")}
-                      className="hover:text-[#A8BDA1] transition duration-200 cursor-pointer"
-                    >
-                      Compressed Blocks
-                    </li>
-                    <li
-                      onClick={() => handleCategoryClick("Grow Bag")}
-                      className="hover:text-[#A8BDA1] transition duration-200 cursor-pointer"
-                    >
-                      Grow Bag
-                    </li>
-                    <li
-                      onClick={() => handleCategoryClick("Easy Grow Bags")}
-                      className="hover:text-[#A8BDA1] transition duration-200 cursor-pointer"
-                    >
-                      Easy Grow Bags
-                    </li>
-                    <li
-                      onClick={() => handleCategoryClick("Bags")}
-                      className="hover:text-[#A8BDA1] transition duration-200 cursor-pointer"
-                    >
-                      Bags
-                    </li>
-                  </ul>
-                </div>
-                <div>
-                  <h4 className="font-bold text-lg mb-2">Coconut Fiber</h4>
-                  <ul className="space-y-1 text-sm">
-                    <li
-                      onClick={() => handleCategoryClick("Coir Fiber")}
-                      className="hover:text-[#A8BDA1] transition duration-200 cursor-pointer"
-                    >
-                      Coir Fiber
-                    </li>
-                    <li
-                      onClick={() => handleCategoryClick("Coir Yarn")}
-                      className="hover:text-[#A8BDA1] transition duration-200 cursor-pointer"
-                    >
-                      Coir Yarn
-                    </li>
-                  </ul>
-                </div>
-                <div>
-                  <h4 className="font-bold text-lg mb-2">Coconut</h4>
-                  <ul className="space-y-1 text-sm">
-                    <li
-                      onClick={() => handleCategoryClick("Tender Coconut")}
-                      className="hover:text-[#A8BDA1] transition duration-200 cursor-pointer"
-                    >
-                      Tender Coconut
-                    </li>
-                    <li
-                      onClick={() => handleCategoryClick("Coconut")}
-                      className="hover:text-[#A8BDA1] transition duration-200 cursor-pointer"
-                    >
-                      Coconut
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            )}
+            <AnimatePresence>
+              {isDropdownVisible && (
+                <motion.div
+                  className="absolute right-[-20rem] top-full mt-4 bg-[#2F5233] text-white rounded-lg shadow-lg p-4 w-[80vw] max-w-3xl grid grid-cols-2 md:grid-cols-3 gap-6 z-50"
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  {productCategories.map((category, index) => (
+                    <div key={index}>
+                      <h4 className="font-bold text-lg mb-2">
+                        {category.name}
+                      </h4>
+                      <ul className="space-y-1">
+                        {category.subcategories.map((sub, idx) => (
+                          <li
+                            key={idx}
+                            onClick={() => handleCategoryClick(sub)}
+                            className="hover:text-[#A8BDA1] cursor-pointer"
+                          >
+                            {sub}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))}
+                </motion.div>
+              )}
+            </AnimatePresence>
           </div>
+
           <Link
             to="/resources"
-            className="hover:text-[#1E3B2B] hover:underline transition duration-200"
+            className="hover:text-[#1E3B2B] transition duration-200"
           >
             Resources
           </Link>
           <Link
             to="/about-us"
-            className="hover:text-[#1E3B2B] hover:underline transition duration-200"
+            className="hover:text-[#1E3B2B] transition duration-200"
           >
             About
           </Link>
           <Link
             to="/contact"
-            className="hover:text-[#1E3B2B] hover:underline transition duration-200 rounded-xl border bg-green-300 px-5"
+            className="px-4 py-2 bg-[#2F5233] text-white rounded-lg hover:bg-[#1E3B2B] transition duration-300"
           >
             Get in Touch
           </Link>
         </nav>
+
+        {/* Mobile Menu Button */}
+        <div className="md:hidden">
+          <button
+            onClick={() => setIsMobileMenuOpen((prev) => !prev)}
+            className="text-2xl text-[#2F5233]"
+          >
+            {isMobileMenuOpen ? <FiX /> : <FiMenu />}
+          </button>
+        </div>
       </div>
-      <hr className="border-t border-[#A8BDA1]" />
+
+      {/* Mobile Menu */}
+      <AnimatePresence>
+        {isMobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.3 }}
+            className="md:hidden bg-[#2F5233] text-white p-6"
+          >
+            <ul className="space-y-4 text-lg">
+              <li>
+                <Link to="/" onClick={() => setIsMobileMenuOpen(false)}>
+                  Home
+                </Link>
+              </li>
+              <li>
+                <span
+                  onClick={() => setIsDropdownVisible(!isDropdownVisible)}
+                  className="cursor-pointer block"
+                >
+                  Products
+                </span>
+                {isDropdownVisible && (
+                  <ul className="ml-4 mt-2 space-y-2">
+                    {productCategories.map((category, index) => (
+                      <li key={index} className="font-semibold">
+                        {category.name}
+                        <ul className="ml-4 mt-1 space-y-1 text-sm">
+                          {category.subcategories.map((sub, idx) => (
+                            <li
+                              key={idx}
+                              onClick={() => handleCategoryClick(sub)}
+                              className="hover:text-[#A8BDA1] cursor-pointer"
+                            >
+                              {sub}
+                            </li>
+                          ))}
+                        </ul>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </li>
+              <li>
+                <Link
+                  to="/resources"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Resources
+                </Link>
+              </li>
+              <li>
+                <Link to="/about-us" onClick={() => setIsMobileMenuOpen(false)}>
+                  About
+                </Link>
+              </li>
+              <li>
+                <Link to="/contact" onClick={() => setIsMobileMenuOpen(false)}>
+                  Contact
+                </Link>
+              </li>
+            </ul>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   );
 };
