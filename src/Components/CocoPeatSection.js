@@ -13,7 +13,6 @@ const CocoPeatSection = () => {
         transition={{ duration: 1 }}
         viewport={{ once: true }}
       >
-        <CocoPeatBenefits />
         <GrowingCrops />
       </motion.div>
     </section>

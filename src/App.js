@@ -115,6 +115,7 @@ import ContactUs from "./Components/ContactUs";
 import CocoPeatSection from "./Components/CocoPeatSection";
 import CocoPeatSuppliers from "./Components/CocoPeatSuppliers";
 import Resources from "./Components/Resources";
+import CocoPeatBenefits from "./Components/CocoPeatBenefits";
 
 function App() {
   const [selectedCategory, setSelectedCategory] = useState("");
@@ -132,6 +133,7 @@ function App() {
                 <HeroSection />
                 <CocoPeatSection />
                 <CocoPeatSuppliers />
+                <CocoPeatBenefits />
               </>
             }
           />
