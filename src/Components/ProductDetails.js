@@ -1,6 +1,14 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
-import CocoPeatImage from "../Images/Growing-Vegetables-in-Coco-Coir.jpg"; // Example image for Coco Peat
+import CocoPeatImage from "../Images/Web_Images/Coco-peat and coco-product.jpg";
+import CompressedBlocksImage from "../Images/Web_Images/compressed blocks.jpg"; // Example image for Coco Peat
+import GrowBagImage from "../Images/Web_Images/Bags.jpg";
+import EasyGrowBagsImages from "../Images/Web_Images/easy grow bag.jpg";
+import BagsImage from "../Images/Web_Images/Bags.jpg";
+import CoirFiberImage from "../Images/Web_Images/coco fiber.jpg";
+import CoirYarnImage from "../Images/Web_Images/coco yarn.jpg";
+import TenderCoconutImage from "../Images/Web_Images/Tender coconut.jpg";
+import CoconutImage from "../Images/Web_Images/coconut.jpg";
 import TomatoImage from "../Images/Products/Recommended for products/Tomatoes.jpg"; // Example image for Tomatoes
 import CucumberImage from "../Images/Products/Recommended for products/Cucumbers.jpg";
 import PeppersImage from "../Images/Products/Recommended for products/Peppers.jpg";
@@ -58,7 +66,7 @@ const ProductDetails = ({ category }) => {
     },
     "Compressed Blocks": {
       title: "Compressed Blocks",
-      image: CocoPeatImage,
+      image: CompressedBlocksImage,
       description: (
         <>
           <p>
@@ -99,7 +107,7 @@ const ProductDetails = ({ category }) => {
     },
     "Grow Bag": {
       title: "Grow Bag",
-      image: CocoPeatImage,
+      image: GrowBagImage,
       description: (
         <>
           <p>
@@ -141,7 +149,7 @@ const ProductDetails = ({ category }) => {
     },
     "Easy Grow Bags": {
       title: "Easy Grow Bags",
-      image: CocoPeatImage,
+      image: EasyGrowBagsImages,
       description: (
         <>
           <p>
@@ -175,7 +183,7 @@ const ProductDetails = ({ category }) => {
     },
     Bags: {
       title: "Bags",
-      image: CocoPeatImage,
+      image: BagsImage,
       description: (
         <>
           <p>
@@ -216,7 +224,7 @@ const ProductDetails = ({ category }) => {
     },
     "Coir Fiber": {
       title: "Coir Fiber",
-      image: CocoPeatImage,
+      image: CoirFiberImage,
       description: (
         <>
           <p>
@@ -238,7 +246,7 @@ const ProductDetails = ({ category }) => {
     },
     "Coir Yarn": {
       title: "Coir Yarn",
-      image: CocoPeatImage,
+      image: CoirYarnImage,
       description: (
         <>
           <p>
@@ -262,7 +270,7 @@ const ProductDetails = ({ category }) => {
     },
     "Tender Coconut": {
       title: "Tender Coconut",
-      image: CocoPeatImage,
+      image: TenderCoconutImage,
       description: (
         <>
           <p>
@@ -292,7 +300,7 @@ const ProductDetails = ({ category }) => {
     },
     Coconut: {
       title: "Coconut",
-      image: CocoPeatImage,
+      image: CoconutImage,
       description: (
         <>
           <p>
@@ -342,7 +350,7 @@ const ProductDetails = ({ category }) => {
       <div
         className="bg-cover bg-center h-40 flex items-center justify-center"
         style={{
-          backgroundImage: `url('https://via.placeholder.com/1200x400?text=Product')`, // Replace with actual background image
+          backgroundImage: `url('https://via.placeholder.com/1200x400?text=about')`, // Replace with actual background image
         }}
       >
         <nav className="text-sm text-white font-sans">

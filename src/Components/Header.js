@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { FiMenu, FiX } from "react-icons/fi";
+import logo from "../Images/Web_Images/Comapany_logo.jpg";
 
 const Header = ({ setSelectedCategory }) => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -49,7 +50,7 @@ const Header = ({ setSelectedCategory }) => {
           to="/"
           className="text-3xl font-bold font-serif text-[#2F5233] hover:scale-105 transition-transform"
         >
-          POYS COCO EXPORTS
+          <img src={logo} className="h-10 w-48 rounded-2xl" />
         </Link>
 
         {/* Desktop Navigation */}

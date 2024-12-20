@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import CocoPeatGrowingCrops from "../Images/il_1588xN.2729534689_5jyd.webp";
+import CocoPeatGrowingCrops from "../Images/Web_Images/Coco-peat and coco-product.jpg";
 
 const GrowingCrops = () => {
   return (

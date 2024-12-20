@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { FaWhatsapp } from "react-icons/fa";
 import { motion } from "framer-motion";
-import backgroundImage from "../Images/top-view-plants_23-2148175929.avif";
+import backgroundImage from "../Images/Web_Images/Main-banner.jpg";
 
 const HeroSection = () => {
   return (
