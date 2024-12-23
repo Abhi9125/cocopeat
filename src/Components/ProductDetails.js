@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 import { Link, useLocation } from "react-router-dom";
 import CocoPeatImage from "../Images/Web_Images/Coco-peat and coco-product.jpg";
 import CompressedBlocksImage from "../Images/Web_Images/compressed blocks.jpg"; // Example image for Coco Peat
@@ -9,16 +10,16 @@ import CoirFiberImage from "../Images/Web_Images/coco fiber.jpg";
 import CoirYarnImage from "../Images/Web_Images/coco yarn.jpg";
 import TenderCoconutImage from "../Images/Web_Images/Tender coconut.jpg";
 import CoconutImage from "../Images/Web_Images/coconut.jpg";
-import TomatoImage from "../Images/Products/Recommended for products/Tomatoes.jpg"; // Example image for Tomatoes
-import CucumberImage from "../Images/Products/Recommended for products/Cucumbers.jpg";
-import PeppersImage from "../Images/Products/Recommended for products/Peppers.jpg";
-import AubergineImage from "../Images/Products/Recommended for products/Aubergine.jpg";
-import RaspberriesImage from "../Images/Products/Recommended for products/Raspberries.jpg";
-import BlackberriesImage from "../Images/Products/Recommended for products/Blackberries.jpg"; // Example image for Cucumber
-import BlueberriesImage from "../Images/Products/Recommended for products/Blueberries.jpg";
-import HerbsImage from "../Images/Products/Recommended for products/Herbs.jpg";
-import FlowersImage from "../Images/Products/Recommended for products/Flowers.jpg";
-import MicroGreensImage from "../Images/Products/Recommended for products/Micro-Greens.jpg";
+import TomatoImage from "../Images/Products/Recommended for products/tomato.png"; // Example image for Tomatoes
+import CucumberImage from "../Images/Products/Recommended for products/cucumber.png";
+import PeppersImage from "../Images/Products/Recommended for products/chilly.png";
+import AubergineImage from "../Images/Products/Recommended for products/aubergine.png";
+import RaspberriesImage from "../Images/Products/Recommended for products/raspberry.png";
+import BlackberriesImage from "../Images/Products/Recommended for products/black-berry.png"; // Example image for Cucumber
+import BlueberriesImage from "../Images/Products/Recommended for products/blue-berry.png";
+import HerbsImage from "../Images/Products/Recommended for products/herbs.png";
+import FlowersImage from "../Images/Products/Recommended for products/herbs.png";
+import MicroGreensImage from "../Images/Products/Recommended for products/micro-greens.png";
 
 const ProductDetails = ({ category }) => {
   const location = useLocation();
@@ -353,7 +354,12 @@ const ProductDetails = ({ category }) => {
           backgroundImage: `url('https://via.placeholder.com/1200x400?text=about')`, // Replace with actual background image
         }}
       >
-        <nav className="text-sm text-white font-sans">
+        <motion.nav
+          className="text-sm text-white font-sans"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+        >
           <Link to="/" className="hover:underline">
             Home
           </Link>{" "}
@@ -363,19 +369,27 @@ const ProductDetails = ({ category }) => {
           </Link>{" "}
           <span className="text-white px-2">›</span>
           <span className="font-semibold">{title}</span>
-        </nav>
+        </motion.nav>
       </div>
 
       {/* Product Details */}
       <div className="p-6 py-12 bg-[#F5F1E0] max-w-7xl mx-auto">
         {/* Product Header */}
-        <div className="flex flex-col md:flex-row items-start md:items-center space-y-6 md:space-y-0 md:space-x-8">
+        <motion.div
+          className="flex flex-col md:flex-row items-start md:items-center space-y-6 md:space-y-0 md:space-x-8"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1 }}
+        >
           {/* Product Image */}
           {image && (
-            <img
+            <motion.img
               src={image}
               alt={title}
               className="w-full md:w-1/3 rounded-lg shadow-md"
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 1 }}
             />
           )}
           {/* Product Info */}
@@ -383,23 +397,48 @@ const ProductDetails = ({ category }) => {
             <h2 className="text-3xl sm:text-4xl font-bold text-[#2F5233] font-serif">
               {title}
             </h2>
-            <p className="mt-4 text-lg text-[#6B4F4F] font-sans">
+            <motion.p
+              className="mt-4 text-lg text-[#6B4F4F] font-sans leading-relaxed"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1 }}
+            >
               {description}
-            </p>
+            </motion.p>
           </div>
-        </div>
+        </motion.div>
 
         {/* Product Uses */}
         {uses && (
           <div className="mt-8">
-            <h3 className="text-2xl font-bold text-[#2F5233] mb-4 font-serif">
+            <motion.h3
+              className="text-2xl font-bold text-[#2F5233] mb-4 font-serif"
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 1 }}
+            >
               Commonly Used For:
-            </h3>
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+            </motion.h3>
+            <motion.div
+              className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6"
+              initial="hidden"
+              animate="visible"
+              variants={{
+                hidden: { opacity: 0 },
+                visible: {
+                  opacity: 1,
+                  transition: {
+                    staggerChildren: 0.2,
+                  },
+                },
+              }}
+            >
               {uses.map((use, index) => (
-                <div
+                <motion.div
                   key={index}
                   className="text-center bg-white p-2 rounded-lg shadow-md"
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ duration: 0.3 }}
                 >
                   {use.image && (
                     <img
@@ -411,33 +450,43 @@ const ProductDetails = ({ category }) => {
                   <span className="text-lg font-medium text-[#2F5233] font-sans">
                     {use.name}
                   </span>
-                </div>
+                </motion.div>
               ))}
-            </div>
+            </motion.div>
           </div>
         )}
 
         {/* Additional Info */}
         {link && (
-          <div className="mt-8">
+          <motion.div
+            className="mt-8"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1 }}
+          >
             <Link
               to={link}
               className="text-lg font-bold text-[#2F5233] hover:underline font-serif"
             >
               More about Coco Peat
             </Link>
-          </div>
+          </motion.div>
         )}
 
         {/* CTA Button */}
-        <div className="text-center">
+        <motion.div
+          className="text-center mt-10"
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1 }}
+        >
           <Link
             to="/contact"
             className="px-6 py-3 bg-[#2F5233] text-white text-lg font-sans rounded-lg hover:bg-[#1E3B2B] transition duration-300"
           >
             Get in Touch with Us
           </Link>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

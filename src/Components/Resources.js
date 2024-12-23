@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const resourcesData = [
   {
@@ -177,32 +178,59 @@ const Resources = () => {
   return (
     <section className="bg-[#F5F1E0] min-h-screen">
       {/* Breadcrumb Section */}
-      <div
+      <motion.div
         className="bg-cover bg-center h-40 flex items-center justify-center"
         style={{
           backgroundImage: `url('https://via.placeholder.com/1200x400?text=Resources')`, // Replace with an actual banner image
         }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1 }}
       >
-        <nav className="text-sm text-white font-sans">
+        <motion.nav
+          className="text-sm text-white font-sans"
+          initial={{ y: -20 }}
+          animate={{ y: 0 }}
+          transition={{ duration: 1 }}
+        >
           <Link to="/" className="hover:underline">
             Home
           </Link>{" "}
           <span className="text-white px-2">›</span>
           <span className="font-semibold">Resources</span>
-        </nav>
-      </div>
+        </motion.nav>
+      </motion.div>
 
       {/* Content Section */}
       <div className="container mx-auto px-4 sm:px-6 py-10">
         {resourcesData.map((resource, index) => (
-          <div key={index} className="mb-16">
+          <motion.div
+            key={index}
+            className="mb-16"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: index * 0.3 }}
+            viewport={{ once: true }}
+          >
             {/* Resource Title */}
-            <h2 className="text-3xl sm:text-4xl font-bold text-[#2F5233] font-serif mb-6 text-center">
+            <motion.h2
+              className="text-3xl sm:text-4xl font-bold text-[#2F5233] font-serif mb-6 text-center"
+              initial={{ scale: 0.8 }}
+              whileInView={{ scale: 1 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+            >
               {resource.title}
-            </h2>
-            <p className="text-base sm:text-lg text-[#6B4F4F] font-sans leading-relaxed mb-8 text-center max-w-4xl mx-auto">
+            </motion.h2>
+            <motion.p
+              className="text-base sm:text-lg text-[#6B4F4F] font-sans leading-relaxed mb-8 text-center max-w-4xl mx-auto"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+            >
               {resource.description}
-            </p>
+            </motion.p>
 
             {/* Resource Sections */}
             {resource.sections.map((section, idx) => (
@@ -211,30 +239,69 @@ const Resources = () => {
                 className="flex flex-col md:flex-row items-center gap-8 mb-8"
               >
                 {section.image && (
-                  <img
+                  <motion.img
                     src={section.image}
                     alt={section.subtitle}
                     className="w-full md:w-1/2 rounded-lg shadow-lg"
+                    initial={{ x: -100, opacity: 0 }}
+                    whileInView={{ x: 0, opacity: 1 }}
+                    transition={{ duration: 0.8, delay: idx * 0.2 }}
+                    viewport={{ once: true }}
                   />
                 )}
-                <div>
-                  <h3 className="text-2xl font-semibold text-[#2F5233] font-serif mb-4">
+                <motion.div
+                  className="w-full"
+                  initial={{ x: 100, opacity: 0 }}
+                  whileInView={{ x: 0, opacity: 1 }}
+                  transition={{ duration: 0.8, delay: idx * 0.2 }}
+                  viewport={{ once: true }}
+                >
+                  <motion.h3
+                    className="text-2xl font-semibold text-[#2F5233] font-serif mb-4"
+                    initial={{ scale: 0.9 }}
+                    whileInView={{ scale: 1 }}
+                    transition={{ duration: 0.6 }}
+                    viewport={{ once: true }}
+                  >
                     {section.subtitle}
-                  </h3>
+                  </motion.h3>
                   {section.details.length > 0 && (
                     <ul className="list-disc pl-6 text-[#6B4F4F] font-sans space-y-2">
                       {section.details.map((detail, detailIdx) => (
-                        <li key={detailIdx}>{detail}</li>
+                        <motion.li
+                          key={detailIdx}
+                          initial={{ opacity: 0, y: 10 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          transition={{
+                            duration: 0.4,
+                            delay: detailIdx * 0.2,
+                          }}
+                          viewport={{ once: true }}
+                        >
+                          {detail}
+                        </motion.li>
                       ))}
                     </ul>
                   )}
                   {section.note && (
-                    <p className="mt-4 text-sm text-[#A8BDA1] italic">
+                    <motion.p
+                      className="mt-4 text-sm text-[#A8BDA1] italic"
+                      initial={{ opacity: 0 }}
+                      whileInView={{ opacity: 1 }}
+                      transition={{ duration: 0.6 }}
+                      viewport={{ once: true }}
+                    >
                       Note: {section.note}
-                    </p>
+                    </motion.p>
                   )}
                   {section.table && (
-                    <div className="overflow-x-auto mt-4">
+                    <motion.div
+                      className="overflow-x-auto mt-4"
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.8 }}
+                      viewport={{ once: true }}
+                    >
                       <table className="min-w-full text-sm text-left text-[#6B4F4F] border-collapse border border-[#A8BDA1]">
                         <thead className="bg-[#F5F1E0] text-[#2F5233] font-bold">
                           <tr>
@@ -250,7 +317,17 @@ const Resources = () => {
                         </thead>
                         <tbody>
                           {section.table.rows.map((row, rowIndex) => (
-                            <tr key={rowIndex} className="hover:bg-[#F5F5F5]">
+                            <motion.tr
+                              key={rowIndex}
+                              className="hover:bg-[#F5F5F5]"
+                              initial={{ opacity: 0 }}
+                              whileInView={{ opacity: 1 }}
+                              transition={{
+                                duration: 0.4,
+                                delay: rowIndex * 0.2,
+                              }}
+                              viewport={{ once: true }}
+                            >
                               {row.map((cell, cellIndex) => (
                                 <td
                                   key={cellIndex}
@@ -259,26 +336,31 @@ const Resources = () => {
                                   {cell}
                                 </td>
                               ))}
-                            </tr>
+                            </motion.tr>
                           ))}
                         </tbody>
                       </table>
-                    </div>
+                    </motion.div>
                   )}
-                </div>
+                </motion.div>
               </div>
             ))}
-          </div>
+          </motion.div>
         ))}
         {/* CTA Button */}
-        <div className="text-center">
+        <motion.div
+          className="text-center"
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1 }}
+        >
           <Link
             to="/contact"
             className="px-6 py-3 bg-[#2F5233] text-white text-lg font-sans rounded-lg hover:bg-[#1E3B2B] transition duration-300"
           >
             Get in Touch with Us
           </Link>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
