@@ -100,9 +100,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import productionImage from "../Images/Growing-Vegetables-in-Coco-Coir.jpg"; // Update with actual image paths
-import communityImage from "../Images/Growing-Vegetables-in-Coco-Coir.jpg";
+import NurturetheNatureImg from "../Images/Web_Images/about1.jpg";
+import communityImage from "../Images/Web_Images/about2.jpg";
 import founderImage from "../Images/Growing-Vegetables-in-Coco-Coir.jpg";
+import bannerImage from "../Images/Web_Images/product_sub_banner.jpg";
 
 const About = () => {
   const fadeInUp = {
@@ -118,7 +119,7 @@ const About = () => {
       <div
         className="bg-cover bg-center h-40 flex items-center justify-center"
         style={{
-          backgroundImage: `url('https://via.placeholder.com/1200x400?text=About')`,
+          backgroundImage: `url(${bannerImage})`,
         }}
       >
         <nav className="text-sm text-white font-sans">
@@ -139,7 +140,7 @@ const About = () => {
           {/* Left Image */}
           <div className="w-full md:w-1/2">
             <img
-              src={productionImage}
+              src={NurturetheNatureImg}
               alt="Nurture the Nature"
               className="rounded-lg shadow-lg w-full h-72 object-cover"
             />
@@ -171,7 +172,7 @@ const About = () => {
       {/* The Journey Section */}
       <div className="container mx-auto px-6 py-16 bg-white">
         <motion.div
-          className="flex flex-col md:flex-row-reverse items-center gap-8"
+          className="flex flex-col md:flex-row items-center gap-8"
           {...fadeInUp}
         >
           {/* Left Content */}

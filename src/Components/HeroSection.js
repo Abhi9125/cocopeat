@@ -68,7 +68,7 @@ const HeroSection = () => {
 
       {/* WhatsApp Button */}
       <motion.a
-        href="https://wa.me/<your-phone-number>?text=Hi,%20I%20would%20like%20to%20know%20more%20about%20your%20products!"
+        href="https://wa.me/91-9842455534?text=Hi,%20I%20would%20like%20to%20know%20more%20about%20your%20products!"
         target="_blank"
         rel="noopener noreferrer"
         className="fixed bottom-4 right-4 bg-[#25D366] text-white flex items-center space-x-2 px-4 py-3 rounded-full shadow-lg hover:bg-[#1EBE54] transition duration-300 z-20"

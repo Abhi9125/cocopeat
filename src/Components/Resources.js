@@ -1,7 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-
+import bannerImage from "../Images/Web_Images/product_sub_banner.jpg";
+import CocoPeatInterestingChoiceForGardenImg from "../Images/Web_Images/Resource1.jpg";
+import COCOPeatKnownBestSoilImproverImg from "../Images/Web_Images/Resource2.jpg";
+import CharacteristicsPoyscocoCocoPeatImg from "../Images/Web_Images/Resource3.jpg";
+import AdvantagesPoyscocoCocoPeatImg from "../Images/Web_Images/Resource4.jpg";
 const resourcesData = [
   {
     title: "Coco Peat",
@@ -13,7 +17,7 @@ const resourcesData = [
         details: [
           "COCO Peat comes from the outer husk of the coconut. It is a particularly effective soil improver that optimizes the air and water balance of the soil. This quickly improves the soil and makes it noticeably healthier. Thanks to its unique properties, such as high water absorption, improved soil ventilation and increased organic content, coconut fiber offers a natural and effective solution for various soil types. This makes it an extremely sustainable and versatile choice, both for garden enthusiasts who strive for a healthy garden and for agricultural professionals. POYSCOCO supplies the best quality COCO Peat and Coconut products. ",
         ],
-        image: "/images/coco-peat-characteristics.jpg",
+        image: CocoPeatInterestingChoiceForGardenImg,
       },
       {
         subtitle:
@@ -21,7 +25,7 @@ const resourcesData = [
         details: [
           "COCO Peat is the outer husk of the coconut and improves both air and water management. Since COCO Peat is completely organic, COCO Peat also increases the organic content of the soil. A good soil must both quickly drain excess water and be able to store sufficient water for dry periods. Also very important is good soil ventilation. The resilient COCO Peat ensure optimum soil ventilation.COCO Peat are considered to be among the best substrates, but are not usable when pure from nature due to the very high salt content. This salt has all been expertly removed, perfectly buffered and aged. Therefore, when you buy coconut fibers, you must be sure that this work has been done properly.",
         ],
-        image: "/images/coco-peat-advantages.jpg",
+        image: COCOPeatKnownBestSoilImproverImg,
       },
       {
         subtitle: "Additional benefits:",
@@ -91,7 +95,7 @@ const resourcesData = [
           "Good drainage as well as high water holding capacity (WHC) helps to retain moisture and avoid water logging for plants.",
           "High Cation exchange capacity (CEC) helps plants absorb necessary nutrients",
         ],
-        image: "/images/coco-peat-characteristics.jpg",
+        image: CharacteristicsPoyscocoCocoPeatImg,
       },
       {
         subtitle: "Advantages of Poyscoco Coco Peat",
@@ -103,7 +107,7 @@ const resourcesData = [
           "Helps growers save costs in efforts of caring and using labor",
           "Versatile growing medium for both horticulture and non-horticulture fields",
         ],
-        image: "/images/coco-peat-advantages.jpg",
+        image: AdvantagesPoyscocoCocoPeatImg,
       },
       {
         subtitle: "Instruction to Use the Poyscoco Coco Peat",
@@ -181,7 +185,7 @@ const Resources = () => {
       <motion.div
         className="bg-cover bg-center h-40 flex items-center justify-center"
         style={{
-          backgroundImage: `url('https://via.placeholder.com/1200x400?text=Resources')`, // Replace with an actual banner image
+          backgroundImage: `url(${bannerImage})`, // Replace with an actual banner image
         }}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

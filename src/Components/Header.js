@@ -46,11 +46,12 @@ const Header = ({ setSelectedCategory }) => {
     >
       <div className="container mx-auto flex items-center justify-between py-4 px-6">
         {/* Logo */}
-        <Link
-          to="/"
-          className="text-3xl font-bold font-serif text-[#2F5233] hover:scale-105 transition-transform"
-        >
-          <img src={logo} className="h-14 w-36 rounded-2xl" />
+        <Link to="/" className="flex items-center justify-center h-28 md:h-24">
+          <img
+            src={logo}
+            alt="Poyscoco Logo"
+            className="h-full max-w-full object-contain"
+          />
         </Link>
 
         {/* Desktop Navigation */}
@@ -139,7 +140,7 @@ const Header = ({ setSelectedCategory }) => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3 }}
-            className="md:hidden bg-[#2F5233] text-white p-6"
+            className="md:hidden bg-[#2F5233] text-white p-6 fixed top-0 left-0 w-full h-screen overflow-auto z-50"
           >
             <ul className="space-y-4 text-lg">
               <li>

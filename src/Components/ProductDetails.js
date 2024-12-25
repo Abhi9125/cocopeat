@@ -20,6 +20,7 @@ import BlueberriesImage from "../Images/Products/Recommended for products/blue-b
 import HerbsImage from "../Images/Products/Recommended for products/herbs.png";
 import FlowersImage from "../Images/Products/Recommended for products/herbs.png";
 import MicroGreensImage from "../Images/Products/Recommended for products/micro-greens.png";
+import bannerImage from "../Images/Web_Images/product_sub_banner.jpg";
 
 const ProductDetails = ({ category }) => {
   const location = useLocation();
@@ -351,7 +352,7 @@ const ProductDetails = ({ category }) => {
       <div
         className="bg-cover bg-center h-40 flex items-center justify-center"
         style={{
-          backgroundImage: `url('https://via.placeholder.com/1200x400?text=about')`, // Replace with actual background image
+          backgroundImage: `url(${bannerImage})`, // Replace with actual background image
         }}
       >
         <motion.nav
