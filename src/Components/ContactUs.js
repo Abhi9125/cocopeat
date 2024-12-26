@@ -571,7 +571,7 @@ const ContactUs = () => {
           viewport={{ once: true }}
         >
           <h2 className="text-2xl sm:text-3xl font-bold text-[#2F5233] font-serif mb-6 text-center">
-            Online Enquiry Form
+            Drop Us a Note
           </h2>
           <form className="space-y-6" onSubmit={handleSubmit}>
             {successMessage && (
