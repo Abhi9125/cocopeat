@@ -183,7 +183,7 @@ const Resources = () => {
     <section className="bg-[#F5F1E0] min-h-screen">
       {/* Breadcrumb Section */}
       <motion.div
-        className="bg-cover bg-center h-40 flex items-center justify-center"
+        className="bg-cover bg-center h-44 flex items-center justify-center"
         style={{
           backgroundImage: `url(${bannerImage})`, // Replace with an actual banner image
         }}
@@ -192,7 +192,7 @@ const Resources = () => {
         transition={{ duration: 1 }}
       >
         <motion.nav
-          className="text-sm text-white font-sans"
+          className="text-sm text-white font-sans pt-10"
           initial={{ y: -20 }}
           animate={{ y: 0 }}
           transition={{ duration: 1 }}

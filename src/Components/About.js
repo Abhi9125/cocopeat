@@ -117,12 +117,12 @@ const About = () => {
     <section className="bg-[#F5F1E0]">
       {/* Breadcrumb Section */}
       <div
-        className="bg-cover bg-center h-32 flex items-center justify-center"
+        className="bg-cover bg-center h-44 flex items-center justify-center"
         style={{
           backgroundImage: `url(${bannerImage})`,
         }}
       >
-        <nav className="text-sm text-white font-sans">
+        <nav className="text-sm text-white font-sans pt-10">
           <Link to="/" className="hover:underline">
             Home
           </Link>

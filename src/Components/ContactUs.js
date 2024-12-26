@@ -432,6 +432,7 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { collection, addDoc } from "firebase/firestore";
 import db from "../firebase"; // Import Firestore reference
+import bannerImage from "../Images/Web_Images/product_sub_banner.jpg";
 
 const ContactUs = () => {
   const [formData, setFormData] = useState({
@@ -472,16 +473,16 @@ const ContactUs = () => {
     <section className="bg-[#F5F1E0] min-h-screen">
       {/* Breadcrumb Section */}
       <motion.div
-        className="bg-cover bg-center h-40 flex items-center justify-center"
+        className="bg-cover bg-center h-44 flex items-center justify-center"
         style={{
-          backgroundImage: `url('https://via.placeholder.com/1200x400?text=Contact Us')`,
+          backgroundImage: `url(${bannerImage})`,
         }}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
       >
         <motion.nav
-          className="text-sm text-white"
+          className="text-sm text-white pt-10"
           initial={{ y: -20 }}
           animate={{ y: 0 }}
           transition={{ duration: 0.6 }}

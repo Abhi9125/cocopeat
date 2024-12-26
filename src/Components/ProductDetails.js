@@ -350,18 +350,18 @@ const ProductDetails = ({ category }) => {
     <section className="bg-[#F5F1E0] min-h-screen">
       {/* Breadcrumb Section */}
       <div
-        className="bg-cover bg-center h-40 flex items-center justify-center"
+        className="bg-cover bg-center h-44 flex items-center justify-center"
         style={{
           backgroundImage: `url(${bannerImage})`, // Replace with actual background image
         }}
       >
         <motion.nav
-          className="text-sm text-white font-sans"
+          className="text-sm text-white font-sans pt-10"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
         >
-          <Link to="/" className="hover:underline">
+          <Link to="/" className="hover:underline ">
             Home
           </Link>{" "}
           <span className="text-white px-2">›</span>
