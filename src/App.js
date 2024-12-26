@@ -116,12 +116,14 @@ import CocoPeatSection from "./Components/CocoPeatSection";
 import CocoPeatSuppliers from "./Components/CocoPeatSuppliers";
 import Resources from "./Components/Resources";
 import CocoPeatBenefits from "./Components/CocoPeatBenefits";
+import ScrollToTop from "./Components/ScrollToTop";
 
 function App() {
   const [selectedCategory, setSelectedCategory] = useState("");
 
   return (
     <Router>
+      <ScrollToTop />
       <Header setSelectedCategory={setSelectedCategory} />
       <div className="pt-16 pb-16">
         <Routes>

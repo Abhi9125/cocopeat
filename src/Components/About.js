@@ -117,7 +117,7 @@ const About = () => {
     <section className="bg-[#F5F1E0]">
       {/* Breadcrumb Section */}
       <div
-        className="bg-cover bg-center h-40 flex items-center justify-center"
+        className="bg-cover bg-center h-32 flex items-center justify-center"
         style={{
           backgroundImage: `url(${bannerImage})`,
         }}

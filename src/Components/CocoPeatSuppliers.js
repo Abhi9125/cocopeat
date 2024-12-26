@@ -4,7 +4,7 @@ import CocoPeatGrowingCrops from "../Images/Web_Images/coconut.jpg";
 
 const CocoPeatSuppliers = () => {
   return (
-    <section className="flex flex-col items-center space-y-8 py-8 sm:py-12 px-4 sm:px-6 bg-[#F5F1E0]">
+    <section className="flex flex-col items-center space-y-8 py-8 sm:py-12 px-4 sm:px-6 bg-white">
       {/* Section Heading */}
       <motion.h2
         className="text-2xl md:text-3xl font-bold font-serif text-[#2F5233] text-center"

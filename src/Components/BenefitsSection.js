@@ -32,7 +32,7 @@ const BenefitsSection = () => {
   };
 
   return (
-    <section className="py-16 px-6 bg-[#F5F1E0]">
+    <section className="py-16 px-6 bg-white">
       <div className="container mx-auto max-w-4xl">
         <h2 className="text-4xl font-bold text-[#2F5233] font-serif text-center mb-10">
           Why Choose Cocopeat?

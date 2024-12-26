@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 const CocoPeatSection = () => {
   return (
-    <section className="py-8 sm:py-12 px-4 sm:px-6 bg-[#F5F1E0]">
+    <section className="py-8 sm:py-12 px-4 sm:px-6 bg-white">
       <motion.div
         className="container mx-auto space-y-12"
         initial={{ opacity: 0 }}
