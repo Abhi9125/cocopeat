@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { FaWhatsapp } from "react-icons/fa";
 import { motion } from "framer-motion";
 import backgroundImage from "../Images/Web_Images/Main-banner.jpg";
-import logo from "../Images/Web_Images/logo-png.png";
+import logo from "../Images/Web_Images/Comapany_logo.jpg";
 const HeroSection = () => {
   return (
     <section
@@ -31,7 +31,7 @@ const HeroSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.5 }}
         >
-          <img src={logo} className="h-32 mb-4" alt="Logo" />
+          <img src={logo} className="h-20 mb-4" alt="Logo" />
           Empowering Sustainable Growth
         </motion.h1>
         <motion.p
