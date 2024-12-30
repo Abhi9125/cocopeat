@@ -470,7 +470,7 @@ const ContactUs = () => {
   };
 
   return (
-    <section className="bg-[#F5F1E0] min-h-screen">
+    <section className="bg-white min-h-screen">
       {/* Breadcrumb Section */}
       <motion.div
         className="bg-cover bg-center h-44 flex items-center justify-center"
@@ -514,7 +514,7 @@ const ContactUs = () => {
           <h2 className="text-3xl sm:text-4xl font-bold font-serif mb-4">
             Contact Us
           </h2>
-          <p className="text-base sm:text-lg font-sans leading-relaxed">
+          <p className="text-base sm:text-xl font-sans leading-relaxed">
             We are glad to welcome you! It’s our pleasure to have the
             opportunity to connect with you and assist you. Our team is here to
             ensure that your experience with us is seamless and delightful.

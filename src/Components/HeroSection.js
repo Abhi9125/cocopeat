@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { FaWhatsapp } from "react-icons/fa";
 import { motion } from "framer-motion";
 import backgroundImage from "../Images/Web_Images/Main-banner.jpg";
-
+import logo from "../Images/Web_Images/logo-png.png";
 const HeroSection = () => {
   return (
     <section
@@ -26,14 +26,14 @@ const HeroSection = () => {
       {/* Text Content */}
       <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-4 sm:px-6 lg:px-8">
         <motion.h1
-          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold font-serif mb-4 text-[#F5F1E0]"
+          className="flex flex-col items-center justify-center text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold font-serif mb-4 text-[#F5F1E0]"
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.5 }}
         >
+          <img src={logo} className="h-32 mb-4" alt="Logo" />
           Empowering Sustainable Growth
         </motion.h1>
-
         <motion.p
           className="text-sm sm:text-lg md:text-xl font-sans max-w-2xl leading-relaxed mb-6 text-[#A8BDA1]"
           initial={{ opacity: 0, y: 50 }}

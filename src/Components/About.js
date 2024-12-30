@@ -114,7 +114,7 @@ const About = () => {
   };
 
   return (
-    <section className="bg-[#F5F1E0]">
+    <section className="bg-white">
       {/* Breadcrumb Section */}
       <div
         className="bg-cover bg-center h-44 flex items-center justify-center"

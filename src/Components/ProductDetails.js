@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { Link, useLocation } from "react-router-dom";
 import CocoPeatImage from "../Images/Web_Images/Coco-peat and coco-product.jpg";
 import CompressedBlocksImage from "../Images/Web_Images/compressed blocks.jpg"; // Example image for Coco Peat
-import GrowBagImage from "../Images/Web_Images/Bags.jpg";
+import GrowBagImage from "../Images/Web_Images/GrowBag.jpg";
 import EasyGrowBagsImages from "../Images/Web_Images/easy grow bag.jpg";
 import BagsImage from "../Images/Web_Images/Bags.jpg";
 import CoirFiberImage from "../Images/Web_Images/coco fiber.jpg";
@@ -347,7 +347,7 @@ const ProductDetails = ({ category }) => {
   const breadcrumb = location.pathname.split("/").filter(Boolean);
 
   return (
-    <section className="bg-[#F5F1E0] min-h-screen">
+    <section className="bg-white min-h-screen">
       {/* Breadcrumb Section */}
       <div
         className="bg-cover bg-center h-44 flex items-center justify-center"
@@ -374,7 +374,7 @@ const ProductDetails = ({ category }) => {
       </div>
 
       {/* Product Details */}
-      <div className="p-6 py-12 bg-[#F5F1E0] max-w-7xl mx-auto">
+      <div className="p-6 py-12 bg-white max-w-7xl mx-auto">
         {/* Product Header */}
         <motion.div
           className="flex flex-col md:flex-row items-start md:items-center space-y-6 md:space-y-0 md:space-x-8"

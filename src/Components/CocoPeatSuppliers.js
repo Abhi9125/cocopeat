@@ -26,7 +26,7 @@ const CocoPeatSuppliers = () => {
           transition={{ duration: 1 }}
           viewport={{ once: true }}
         >
-          <p className="text-base md:text-lg leading-relaxed font-sans mb-6">
+          <p className="text-sm md:text-xl leading-relaxed font-sans mb-6">
             Poyscoco is a proud supplier of commercial Coco Peat to farms around
             the globe. Experienced in working with commercial farms of fruit and
             vegetable crops, our team coordinates with you and provides you with
