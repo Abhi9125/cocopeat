@@ -108,7 +108,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Header from "./Components/Header";
 import HeroSection from "./Components/HeroSection";
 import About from "./Components/About";
-import Products from "./Components/Products";
+// import Products from "./Components/Products";
 import Footer from "./Components/Footer";
 import ProductDetails from "./Components/ProductDetails";
 import ContactUs from "./Components/ContactUs";
@@ -117,6 +117,7 @@ import CocoPeatSuppliers from "./Components/CocoPeatSuppliers";
 import Resources from "./Components/Resources";
 import CocoPeatBenefits from "./Components/CocoPeatBenefits";
 import ScrollToTop from "./Components/ScrollToTop";
+import Product from "./Components/Product";
 
 function App() {
   const [selectedCategory, setSelectedCategory] = useState("");
@@ -142,25 +143,35 @@ function App() {
 
           {/* Static Routes */}
           <Route path="/about-us" element={<About />} />
-          <Route path="/products" element={<Products />} />
+          {/* <Route path="/" element={<Products />} /> */}
           {/* <Route path="/products/:productId" element={<ProductPage />} /> */}
-          <Route
+          {/* <Route
             path="/products"
             element={
               <Products
                 selectedCategory={selectedCategory} // Pass selectedCategory
               />
             }
-          />
+          /> */}
           <Route
             path="/product-details"
             element={<ProductDetails category={selectedCategory} />}
           />
+          <Route
+            path="/product-details/:category"
+            element={<ProductDetails />}
+          />
+
           <Route path="/resources" element={<Resources />} />
           <Route path="/contact" element={<ContactUs />} />
 
+          <Route
+            path="/product"
+            element={<Product setSelectedCategory={setSelectedCategory} />}
+          />
+
           {/* Dynamic Product Details Page */}
-          <Route path="/products/:productId" element={<ProductDetails />} />
+          {/* <Route path="/products/:productId" element={<ProductDetails />} /> */}
         </Routes>
       </div>
       <Footer />

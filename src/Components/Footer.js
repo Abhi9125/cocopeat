@@ -204,7 +204,7 @@ const Footer = () => {
             Explore
           </h3>
           <ul className="space-y-3 font-sans">
-            {["Home", "Products", "Resources", "About", "Contact"].map(
+            {["Home", "Product", "Resources", "About", "Contact"].map(
               (item, index) => (
                 <li key={index}>
                   <Link

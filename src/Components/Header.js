@@ -17,9 +17,14 @@ const Header = ({ setSelectedCategory }) => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // const handleCategoryClick = (category) => {
+  //   setSelectedCategory(category);
+  //   navigate("/product-details");
+  //   setIsDropdownVisible(false);
+  //   setIsMobileMenuOpen(false);
+  // };
   const handleCategoryClick = (category) => {
-    setSelectedCategory(category);
-    navigate("/product-details");
+    navigate(`/product-details/${category}`);
     setIsDropdownVisible(false);
     setIsMobileMenuOpen(false);
   };
