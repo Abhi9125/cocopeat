@@ -39,10 +39,6 @@ const Product = ({ setSelectedCategory }) => {
     },
   ];
 
-  // const handleCardClick = (subcategory) => {
-  //   setSelectedCategory(subcategory);
-  //   navigate("/product-details");
-  // };
   const handleCardClick = (subcategory) => {
     navigate(`/product-details/${subcategory}`);
   };
