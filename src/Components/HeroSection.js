@@ -51,12 +51,12 @@ const HeroSection = () => {
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 1.5 }}
         >
-          {/* <Link
-            to="/products"
+          <Link
+            to="/product"
             className="px-6 py-3 bg-[#2F5233] text-white font-sans text-base rounded-lg hover:bg-[#1E3B2B] transition duration-300"
           >
-            Shop Poys Coco Products
-          </Link> */}
+            Explore Our Products
+          </Link>
           <Link
             to="/about-us"
             className="px-6 py-3 bg-[#A8BDA1] text-[#2F5233] font-sans text-base rounded-lg hover:bg-[#8AA68E] transition duration-300"
