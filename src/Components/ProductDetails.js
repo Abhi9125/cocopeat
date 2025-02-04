@@ -23,50 +23,11 @@ import MicroGreensImage from "../Images/Products/Recommended for products/micro-
 import bannerImage from "../Images/Web_Images/product_sub_banner.jpg";
 import { Helmet } from "react-helmet";
 const productDetails = {
-  "Coco Peat": {
-    title: "Coco Peat",
-    image: CocoPeatImage,
-    description: (
-      <>
-        <p>
-          Poyscoco compressed coco peat Blocks are designed for all types of
-          crop varieties in horticulture, floriculture, and agriculture farming
-          and Gardening. Coco peat, the superior growing medium, is an emerging
-          trend in places where there is a shortage of space and suits different
-          climatic and geographic locations.
-        </p>
-        <p>
-          The Air Filled Porosity (AFP) and Water Holding Capacity (WHC) of
-          Poyscoco coco peat are perfect for all types of growing methods like
-          growing in Pots, Plastic Bags, and Mapal Trough Systems and promote
-          plant growth to get the maximum yield. The composition of Poyscoco
-          coco peat will stabilize the coco peat for a period spanning 2–5
-          years.
-        </p>
-        <p>
-          Poyscoco coco peat is widely used in home gardens, high-tech
-          glasshouses, and low-tech polytunnels. We supply the best compressed
-          coco peat Blocks in various sizes.
-        </p>
-      </>
-    ),
-    uses: [
-      { name: "Tomatoes", image: TomatoImage },
-      { name: "Cucumbers", image: CucumberImage },
-      { name: "Peppers", image: PeppersImage },
-      { name: "Aubergine", image: AubergineImage },
-      { name: "Raspberries", image: RaspberriesImage },
-      { name: "Blackberries", image: BlackberriesImage },
-      { name: "Blueberries", image: BlueberriesImage },
-      { name: "Herbs", image: HerbsImage },
-      { name: "Flowers", image: FlowersImage },
-      { name: "MicroGreens", image: MicroGreensImage },
-    ],
-    link: "/resources#coco-peat",
-  },
   "Compressed Blocks": {
     title: "Compressed Blocks",
     image: CompressedBlocksImage,
+    subHeading:
+      "Poyscoco compressed coco peat Blocks are designed for all types of crop varieties in horticulture, floriculture, and agriculture farming and Gardening.",
     description: (
       <>
         <p>
@@ -108,6 +69,8 @@ const productDetails = {
   "Grow Bag": {
     title: "Grow Bag",
     image: GrowBagImage,
+    subHeading:
+      "Poyscoco Grow Bags are the perfect solution for growing crops. Grow Bags are coco coir compressed slabs, wrapped in polyethylene bags depending on growing conditions.",
     description: (
       <>
         <p>
@@ -149,6 +112,8 @@ const productDetails = {
   "Easy Grow Bags": {
     title: "Easy Grow Bags",
     image: EasyGrowBagsImages,
+    subHeading:
+      "Poyscoco Easy Grow Bags provide a sustainable and efficient growing solution, combining a container and growing medium for enhanced plant growth and multiple cropping cycles.",
     description: (
       <>
         <p>
@@ -183,6 +148,8 @@ const productDetails = {
   Bags: {
     title: "Bags",
     image: BagsImage,
+    subHeading:
+      "Poyscoco coco peat bags offer a high-quality growing medium, ensuring optimal aeration, moisture retention, and plant growth across various farming and gardening methods.",
     description: (
       <>
         <p>
@@ -333,6 +300,7 @@ const ProductDetails = () => {
   const { category } = useParams(); // Retrieve the category from the URL
   const details = productDetails[category]; // Get the details for the specific category
 
+  console.log("Decoded category:", category);
   if (!details) {
     return (
       <div className="p-6 text-center text-[#6B4F4F]">
@@ -341,166 +309,17 @@ const ProductDetails = () => {
     );
   }
 
-  const { title, image, description, uses, link } = details;
-
-  //   return (
-  //     <section className="bg-white min-h-screen">
-  //       {/* Breadcrumb Section */}
-  //       <div
-  //         className="bg-cover bg-center h-44 flex items-center justify-center"
-  //         style={{
-  //           backgroundImage: `url(${bannerImage})`,
-  //         }}
-  //       >
-  //         <motion.nav
-  //           className="text-sm text-white font-sans pt-10"
-  //           initial={{ opacity: 0, y: 30 }}
-  //           animate={{ opacity: 1, y: 0 }}
-  //           transition={{ duration: 1 }}
-  //         >
-  //           <Link to="/" className="hover:underline">
-  //             Home
-  //           </Link>{" "}
-  //           <span className="text-white px-2">›</span>
-  //           <Link to="/product" className="hover:underline">
-  //             Products
-  //           </Link>{" "}
-  //           <span className="text-white px-2">›</span>
-  //           <span className="font-semibold">{title}</span>
-  //         </motion.nav>
-  //       </div>
-
-  //       {/* Product Details */}
-  //       <div className="p-6 py-12 bg-white max-w-7xl mx-auto">
-  //         {/* Product Header */}
-  //         <motion.div
-  //           className="flex flex-col md:flex-row items-start md:items-center space-y-6 md:space-y-0 md:space-x-8"
-  //           initial={{ opacity: 0 }}
-  //           animate={{ opacity: 1 }}
-  //           transition={{ duration: 1 }}
-  //         >
-  //           {/* Product Image */}
-  //           {image && (
-  //             <motion.img
-  //               src={image}
-  //               alt={title}
-  //               className="w-full md:w-1/3 rounded-lg shadow-md"
-  //               initial={{ opacity: 0, scale: 0.8 }}
-  //               animate={{ opacity: 1, scale: 1 }}
-  //               transition={{ duration: 1 }}
-  //             />
-  //           )}
-  //           {/* Product Info */}
-  //           <div>
-  //             <h2 className="text-3xl sm:text-4xl font-bold text-[#2F5233] font-serif">
-  //               {title}
-  //             </h2>
-  //             <motion.p
-  //               className="mt-4 text-lg text-[#6B4F4F] font-sans leading-relaxed"
-  //               initial={{ opacity: 0, y: 20 }}
-  //               animate={{ opacity: 1, y: 0 }}
-  //               transition={{ duration: 1 }}
-  //             >
-  //               {description}
-  //             </motion.p>
-  //           </div>
-  //         </motion.div>
-
-  //         {/* Product Uses */}
-  //         {uses && (
-  //           <div className="mt-8">
-  //             <motion.h3
-  //               className="text-2xl font-bold text-[#2F5233] mb-4 font-serif"
-  //               initial={{ opacity: 0, x: -30 }}
-  //               animate={{ opacity: 1, x: 0 }}
-  //               transition={{ duration: 1 }}
-  //             >
-  //               Commonly Used For:
-  //             </motion.h3>
-  //             <motion.div
-  //               className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6"
-  //               initial="hidden"
-  //               animate="visible"
-  //               variants={{
-  //                 hidden: { opacity: 0 },
-  //                 visible: {
-  //                   opacity: 1,
-  //                   transition: {
-  //                     staggerChildren: 0.2,
-  //                   },
-  //                 },
-  //               }}
-  //             >
-  //               {uses.map((use, index) => (
-  //                 <motion.div
-  //                   key={index}
-  //                   className="text-center bg-white p-2 rounded-lg shadow-md"
-  //                   whileHover={{ scale: 1.05 }}
-  //                   transition={{ duration: 0.3 }}
-  //                 >
-  //                   {use.image && (
-  //                     <img
-  //                       src={use.image}
-  //                       alt={use.name}
-  //                       className="w-full h-60 object-cover rounded-lg mb-1"
-  //                     />
-  //                   )}
-  //                   <span className="text-lg font-medium text-[#2F5233] font-sans">
-  //                     {use.name}
-  //                   </span>
-  //                 </motion.div>
-  //               ))}
-  //             </motion.div>
-  //           </div>
-  //         )}
-
-  //         {/* Additional Info */}
-  //         {link && (
-  //           <motion.div
-  //             className="mt-8"
-  //             initial={{ opacity: 0, y: 20 }}
-  //             animate={{ opacity: 1, y: 0 }}
-  //             transition={{ duration: 1 }}
-  //           >
-  //             <Link
-  //               to={link}
-  //               className="text-lg font-bold text-[#2F5233] hover:underline font-serif"
-  //             >
-  //               More about {title}
-  //             </Link>
-  //           </motion.div>
-  //         )}
-
-  //         {/* CTA Button */}
-  //         <motion.div
-  //           className="text-center mt-10"
-  //           initial={{ opacity: 0, scale: 0.9 }}
-  //           animate={{ opacity: 1, scale: 1 }}
-  //           transition={{ duration: 1 }}
-  //         >
-  //           <Link
-  //             to="/contact"
-  //             className="px-6 py-3 bg-[#2F5233] text-white text-lg font-sans rounded-lg hover:bg-[#1E3B2B] transition duration-300"
-  //           >
-  //             Get in Touch with Us
-  //           </Link>
-  //         </motion.div>
-  //       </div>
-  //     </section>
-  //   );
-  // };
-
-  // export default ProductDetails;
+  const { title, image, subHeading, description, uses, link } = details;
 
   return (
-    <section className="bg-white min-h-screen">
+    <section className="bg-gray-50 min-h-screen">
       {/* SEO Metadata */}
       <Helmet>
         <title>{`${title} - Poyscoco`}</title>
-        <meta name="description" content={description} />
+        <meta name="description" content={`Learn more about ${title}.`} />
         <meta
           name="keywords"
-          content={`${title}, Coco Peat, Sustainable Growth`}
+          content={`${title}, Coco Peat, Urban Gardening`}
         />
         <link
           rel="canonical"
@@ -508,97 +327,120 @@ const ProductDetails = () => {
         />
       </Helmet>
 
-      {/* Breadcrumb Section */}
-      <div
-        className="bg-cover bg-center h-44 flex items-center justify-center"
-        style={{
-          backgroundImage: `url(${bannerImage})`,
-        }}
-      >
+      {/* Hero Banner */}
+      {/* <div className="relative h-60">
+        <img
+          src={bannerImage}
+          alt="Banner"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-black opacity-50"></div>
         <motion.nav
-          className="text-sm text-white font-sans pt-10"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
+          className="relative z-10 text-white text-lg font-medium flex items-center justify-center"
+          initial={{ y: 20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 1 }}
         >
           <Link to="/" className="hover:underline">
             Home
-          </Link>{" "}
-          <span className="text-white px-2">›</span>
+          </Link>
+          <span className="mx-2">›</span>
           <Link to="/product" className="hover:underline">
             Products
-          </Link>{" "}
-          <span className="text-white px-2">›</span>
+          </Link>
+          <span className="mx-2">›</span>
           <span className="font-semibold">{title}</span>
         </motion.nav>
-      </div>
+      </div> */}
 
-      {/* Product Details */}
-      <div className="p-6 py-12 bg-white max-w-7xl mx-auto">
-        <motion.div
-          className="flex flex-col md:flex-row items-start md:items-center space-y-6 md:space-y-0 md:space-x-8"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
+      {/* Hero Banner */}
+      <motion.div
+        className="relative h-60 flex items-center justify-center"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+      >
+        <img
+          src={bannerImage}
+          alt="Produact_Banner"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-black opacity-50"></div>
+        <motion.nav
+          className="relative z-10 text-white text-lg font-medium"
+          initial={{ y: 20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 1 }}
         >
-          {/* Product Image */}
+          <Link to="/" className="hover:underline">
+            Home
+          </Link>
+          <span className="mx-2">›</span>
+          <Link to="/product" className="hover:underline">
+            Products
+          </Link>
+          <span className="mx-2">›</span>
+          <span className="font-semibold">{title}</span>
+        </motion.nav>
+      </motion.div>
+
+      {/* Main Content */}
+      <div className="container mx-auto px-4 py-12">
+        <motion.h1
+          className="text-4xl md:text-5xl font-extrabold text-center text-green-800 mb-4"
+          initial={{ scale: 0.9 }}
+          animate={{ scale: 1 }}
+          transition={{ duration: 0.6 }}
+        >
+          {title}
+        </motion.h1>
+        <motion.h4
+          className="text-xl md:text-2xl text-center text-green-700 mb-8 italic"
+          initial={{ y: -10, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
+          {subHeading}
+        </motion.h4>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           {image && (
             <motion.img
               src={image}
               alt={`${title} image`}
-              className="w-full md:w-1/3 rounded-lg shadow-md"
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 1 }}
+              className="w-full rounded-3xl shadow-2xl"
+              initial={{ x: -100, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.8 }}
               loading="lazy"
             />
           )}
+          <motion.div
+            className="text-lg text-gray-700 leading-relaxed"
+            initial={{ x: 100, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.8 }}
+          >
+            {description}
+          </motion.div>
+        </div>
 
-          {/* Product Info */}
-          <div>
-            <h2 className="text-3xl sm:text-4xl font-bold text-[#2F5233] font-serif">
-              {title}
-            </h2>
-            <motion.p
-              className="mt-4 text-lg text-[#6B4F4F] font-sans leading-relaxed"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1 }}
-            >
-              {description}
-            </motion.p>
-          </div>
-        </motion.div>
-
-        {/* Product Uses */}
+        {/* Uses Section */}
         {uses && (
-          <div className="mt-8">
+          <div className="mt-12">
             <motion.h3
-              className="text-2xl font-bold text-[#2F5233] mb-4 font-serif"
-              initial={{ opacity: 0, x: -30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 1 }}
+              className="text-2xl font-bold text-green-800 mb-4 text-center"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.6 }}
             >
               Commonly Used For:
             </motion.h3>
-            <motion.div
-              className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 gap-6"
-              initial="hidden"
-              animate="visible"
-              variants={{
-                hidden: { opacity: 0 },
-                visible: {
-                  opacity: 1,
-                  transition: {
-                    staggerChildren: 0.2,
-                  },
-                },
-              }}
-            >
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
               {uses.map((use, index) => (
                 <motion.div
                   key={index}
-                  className="text-center bg-white p-2 rounded-lg shadow-md"
+                  className="bg-white rounded-xl shadow-lg p-4 flex flex-col items-center"
                   whileHover={{ scale: 1.05 }}
                   transition={{ duration: 0.3 }}
                 >
@@ -606,50 +448,40 @@ const ProductDetails = () => {
                     <img
                       src={use.image}
                       alt={use.name}
-                      className="w-full h-40 object-cover rounded-lg mb-1"
+                      className="w-full h-72 object-cover rounded-md mb-2"
                       loading="lazy"
                     />
                   )}
-                  <span className="text-lg font-medium text-[#2F5233] font-sans">
+                  <span className="text-sm font-medium text-green-800">
                     {use.name}
                   </span>
                 </motion.div>
               ))}
-            </motion.div>
+            </div>
           </div>
         )}
 
-        {/* Additional Info */}
+        {/* Additional Info Link */}
         {link && (
-          <motion.div
-            className="mt-8"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1 }}
-          >
+          <div className="mt-12 text-center">
             <Link
               to={link}
-              className="text-lg font-bold text-[#2F5233] hover:underline font-serif"
+              className="inline-block px-8 py-3 bg-green-800 text-white text-lg font-semibold rounded-full shadow-lg hover:bg-green-900 transition duration-300"
             >
               More about {title}
             </Link>
-          </motion.div>
+          </div>
         )}
 
         {/* CTA Button */}
-        <motion.div
-          className="text-center mt-10"
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1 }}
-        >
+        <div className="mt-12 text-center">
           <Link
             to="/contact"
-            className="px-6 py-3 bg-[#2F5233] text-white text-lg font-sans rounded-lg hover:bg-[#1E3B2B] transition duration-300"
+            className="inline-block px-8 py-3 bg-green-800 text-white text-lg font-semibold rounded-full shadow-lg hover:bg-green-900 transition duration-300"
           >
             Get in Touch with Us
           </Link>
-        </motion.div>
+        </div>
       </div>
     </section>
   );
