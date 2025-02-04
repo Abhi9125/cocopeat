@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import bannerImage from "../Images/Web_Images/product_sub_banner.jpg";
-import CocoPeatInterestingChoiceForGardenImg from "../Images/Web_Images/Resource1.jpg";
-import COCOPeatKnownBestSoilImproverImg from "../Images/Web_Images/Resource2.jpg";
+import CocoPeatInterestingChoiceForGardenImg from "../Images/Web_Images/COCO Peat an interesting choice for the garden.jpg";
+import COCOPeatKnownBestSoilImproverImg from "../Images/Web_Images/COCO Peat is known as the best soil improver.jpg";
 
 const resourcesData = [
   {
@@ -24,7 +24,7 @@ const resourcesData = [
         details: [
           "COCO Peat is the outer husk of the coconut and improves both air and water management. Since COCO Peat is completely organic, COCO Peat also increases the organic content of the soil. A good soil must both quickly drain excess water and be able to store sufficient water for dry periods. Also very important is good soil ventilation. The resilient COCO Peat ensure optimum soil ventilation.COCO Peat are considered to be among the best substrates, but are not usable when pure from nature due to the very high salt content. This salt has all been expertly removed, perfectly buffered and aged. Therefore, when you buy coconut fibers, you must be sure that this work has been done properly.",
         ],
-        image: COCOPeatKnownBestSoilImproverImg,
+        // image: COCOPeatKnownBestSoilImproverImg,
       },
       {
         subtitle: "Additional benefits:",
@@ -188,14 +188,18 @@ const accordionSections = [
 ];
 
 // const Resources = () => {
+//   const [openAccordion, setOpenAccordion] = useState(null);
+
+//   const toggleAccordion = (index) => {
+//     setOpenAccordion(openAccordion === index ? null : index);
+//   };
+
 //   return (
 //     <section className="bg-white min-h-screen">
 //       {/* Breadcrumb Section */}
 //       <motion.div
 //         className="bg-cover bg-center h-44 flex items-center justify-center"
-//         style={{
-//           backgroundImage: `url(${bannerImage})`, // Replace with an actual banner image
-//         }}
+//         style={{ backgroundImage: `url(${bannerImage})` }}
 //         initial={{ opacity: 0 }}
 //         animate={{ opacity: 1 }}
 //         transition={{ duration: 1 }}
@@ -225,7 +229,6 @@ const accordionSections = [
 //             transition={{ duration: 0.8, delay: index * 0.3 }}
 //             viewport={{ once: true }}
 //           >
-//             {/* Resource Title */}
 //             <motion.h2
 //               className="text-3xl sm:text-4xl font-bold text-[#2F5233] font-serif mb-6 text-center"
 //               initial={{ scale: 0.8 }}
@@ -249,113 +252,137 @@ const accordionSections = [
 //             {resource.sections.map((section, idx) => (
 //               <div
 //                 key={idx}
-//                 className="flex flex-col md:flex-row items-center gap-8 mb-8"
+//                 className={`flex flex-col ${
+//                   accordionSections.includes(section.subtitle) ? "mb-4" : "mb-8"
+//                 }`}
 //               >
-//                 {section.image && (
-//                   <motion.img
-//                     src={section.image}
-//                     alt={section.subtitle}
-//                     className="w-full md:w-1/2 rounded-lg shadow-lg"
-//                     initial={{ x: -100, opacity: 0 }}
-//                     whileInView={{ x: 0, opacity: 1 }}
-//                     transition={{ duration: 0.8, delay: idx * 0.2 }}
-//                     viewport={{ once: true }}
-//                   />
-//                 )}
 //                 <motion.div
-//                   className="w-full"
-//                   initial={{ x: 100, opacity: 0 }}
-//                   whileInView={{ x: 0, opacity: 1 }}
-//                   transition={{ duration: 0.8, delay: idx * 0.2 }}
+//                   className={`flex items-center justify-between cursor-pointer p-4 ${
+//                     accordionSections.includes(section.subtitle)
+//                       ? "bg-[#2F5233] text-white rounded-lg"
+//                       : ""
+//                   }`}
+//                   onClick={() =>
+//                     accordionSections.includes(section.subtitle)
+//                       ? toggleAccordion(idx)
+//                       : null
+//                   }
+//                   initial={{ opacity: 0 }}
+//                   whileInView={{ opacity: 1 }}
+//                   transition={{ duration: 0.8 }}
 //                   viewport={{ once: true }}
 //                 >
-//                   <motion.h3
-//                     className="text-2xl font-semibold text-[#2F5233] font-serif mb-4"
-//                     initial={{ scale: 0.9 }}
-//                     whileInView={{ scale: 1 }}
-//                     transition={{ duration: 0.6 }}
-//                     viewport={{ once: true }}
+//                   <h3
+//                     className={`text-2xl font-semibold ${
+//                       accordionSections.includes(section.subtitle)
+//                         ? "text-white"
+//                         : "text-[#2F5233]"
+//                     } font-serif`}
 //                   >
 //                     {section.subtitle}
-//                   </motion.h3>
-//                   {section.details.length > 0 && (
-//                     <ul className="list-disc pl-6 text-[#6B4F4F] font-sans space-y-2">
-//                       {section.details.map((detail, detailIdx) => (
-//                         <motion.li
-//                           key={detailIdx}
-//                           initial={{ opacity: 0, y: 10 }}
-//                           whileInView={{ opacity: 1, y: 0 }}
-//                           transition={{
-//                             duration: 0.4,
-//                             delay: detailIdx * 0.2,
-//                           }}
-//                           viewport={{ once: true }}
-//                         >
-//                           {detail}
-//                         </motion.li>
-//                       ))}
-//                     </ul>
-//                   )}
-//                   {section.note && (
-//                     <motion.p
-//                       className="mt-4 text-sm text-[#A8BDA1] italic"
-//                       initial={{ opacity: 0 }}
-//                       whileInView={{ opacity: 1 }}
-//                       transition={{ duration: 0.6 }}
-//                       viewport={{ once: true }}
-//                     >
-//                       Note: {section.note}
-//                     </motion.p>
-//                   )}
-//                   {section.table && (
-//                     <motion.div
-//                       className="overflow-x-auto mt-4"
-//                       initial={{ opacity: 0, y: 20 }}
-//                       whileInView={{ opacity: 1, y: 0 }}
-//                       transition={{ duration: 0.8 }}
-//                       viewport={{ once: true }}
-//                     >
-//                       <table className="min-w-full text-sm text-left text-[#6B4F4F] border-collapse border border-[#A8BDA1]">
-//                         <thead className="bg-[#F5F1E0] text-[#2F5233] font-bold">
-//                           <tr>
-//                             {section.table.headers.map((header, index) => (
-//                               <th
-//                                 key={index}
-//                                 className="px-4 py-2 border border-[#A8BDA1]"
-//                               >
-//                                 {header}
-//                               </th>
-//                             ))}
-//                           </tr>
-//                         </thead>
-//                         <tbody>
-//                           {section.table.rows.map((row, rowIndex) => (
-//                             <motion.tr
-//                               key={rowIndex}
-//                               className="hover:bg-[#F5F5F5]"
-//                               initial={{ opacity: 0 }}
-//                               whileInView={{ opacity: 1 }}
-//                               transition={{
-//                                 duration: 0.4,
-//                                 delay: rowIndex * 0.2,
-//                               }}
-//                               viewport={{ once: true }}
-//                             >
-//                               {row.map((cell, cellIndex) => (
-//                                 <td
-//                                   key={cellIndex}
-//                                   className="px-4 py-2 border border-[#A8BDA1] text-[#6B4F4F]"
-//                                 >
-//                                   {cell}
-//                                 </td>
-//                               ))}
-//                             </motion.tr>
-//                           ))}
-//                         </tbody>
-//                       </table>
-//                     </motion.div>
+//                   </h3>
+//                   {accordionSections.includes(section.subtitle) && (
+//                     <span>{openAccordion === idx ? "-" : "+"}</span>
 //                   )}
 //                 </motion.div>
+//                 {(!accordionSections.includes(section.subtitle) ||
+//                   openAccordion === idx) && (
+//                   <motion.div
+//                     className="p-4"
+//                     initial={{ height: 0 }}
+//                     animate={{ height: "auto" }}
+//                     transition={{ duration: 0.6 }}
+//                   >
+//                     {section.image && (
+//                       <motion.img
+//                         src={section.image}
+//                         alt={section.subtitle}
+//                         className="w-full md:w-1/2 rounded-lg shadow-lg mb-4"
+//                         initial={{ x: -100, opacity: 0 }}
+//                         whileInView={{ x: 0, opacity: 1 }}
+//                         transition={{ duration: 0.8 }}
+//                         viewport={{ once: true }}
+//                       />
+//                     )}
+//                     {section.details.length > 0 && (
+//                       <ul className="list-disc pl-6 text-[#6B4F4F] font-sans space-y-2">
+//                         {section.details.map((detail, detailIdx) => (
+//                           <motion.li
+//                             key={detailIdx}
+//                             initial={{ opacity: 0, y: 10 }}
+//                             whileInView={{ opacity: 1, y: 0 }}
+//                             transition={{
+//                               duration: 0.4,
+//                               delay: detailIdx * 0.2,
+//                             }}
+//                             viewport={{ once: true }}
+//                           >
+//                             {detail}
+//                           </motion.li>
+//                         ))}
+//                       </ul>
+//                     )}
+//                     {section.note && (
+//                       <motion.p
+//                         className="mt-4 text-sm text-[#A8BDA1] italic"
+//                         initial={{ opacity: 0 }}
+//                         whileInView={{ opacity: 1 }}
+//                         transition={{ duration: 0.6 }}
+//                         viewport={{ once: true }}
+//                       >
+//                         Note: {section.note}
+//                       </motion.p>
+//                     )}
+//                     {section.table && (
+//                       <motion.div
+//                         className="overflow-x-auto mt-4"
+//                         initial={{ opacity: 0, y: 20 }}
+//                         whileInView={{ opacity: 1, y: 0 }}
+//                         transition={{ duration: 0.8 }}
+//                         viewport={{ once: true }}
+//                       >
+//                         <table className="min-w-full text-sm text-left text-[#6B4F4F] border-collapse border border-[#A8BDA1]">
+//                           <thead className="bg-[#F5F1E0] text-[#2F5233] font-bold">
+//                             <tr>
+//                               {section.table.headers.map((header, index) => (
+//                                 <th
+//                                   key={index}
+//                                   className="px-4 py-2 border border-[#A8BDA1]"
+//                                 >
+//                                   {header}
+//                                 </th>
+//                               ))}
+//                             </tr>
+//                           </thead>
+//                           <tbody>
+//                             {section.table.rows.map((row, rowIndex) => (
+//                               <motion.tr
+//                                 key={rowIndex}
+//                                 className="hover:bg-[#F5F5F5]"
+//                                 initial={{ opacity: 0 }}
+//                                 whileInView={{ opacity: 1 }}
+//                                 transition={{
+//                                   duration: 0.4,
+//                                   delay: rowIndex * 0.2,
+//                                 }}
+//                                 viewport={{ once: true }}
+//                               >
+//                                 {row.map((cell, cellIndex) => (
+//                                   <td
+//                                     key={cellIndex}
+//                                     className="px-4 py-2 border border-[#A8BDA1] text-[#6B4F4F]"
+//                                   >
+//                                     {cell}
+//                                   </td>
+//                                 ))}
+//                               </motion.tr>
+//                             ))}
+//                           </tbody>
+//                         </table>
+//                       </motion.div>
+//                     )}
+//                   </motion.div>
+//                 )}
 //               </div>
 //             ))}
 //           </motion.div>
@@ -383,10 +410,6 @@ const accordionSections = [
 
 const Resources = () => {
   const [openAccordion, setOpenAccordion] = useState(null);
-
-  const toggleAccordion = (index) => {
-    setOpenAccordion(openAccordion === index ? null : index);
-  };
 
   return (
     <section className="bg-white min-h-screen">
@@ -449,6 +472,17 @@ const Resources = () => {
                 className={`flex flex-col ${
                   accordionSections.includes(section.subtitle) ? "mb-4" : "mb-8"
                 }`}
+                // Only attach hover events if this is an accordion section
+                onMouseEnter={
+                  accordionSections.includes(section.subtitle)
+                    ? () => setOpenAccordion(idx)
+                    : undefined
+                }
+                onMouseLeave={
+                  accordionSections.includes(section.subtitle)
+                    ? () => setOpenAccordion(null)
+                    : undefined
+                }
               >
                 <motion.div
                   className={`flex items-center justify-between cursor-pointer p-4 ${
@@ -456,18 +490,13 @@ const Resources = () => {
                       ? "bg-[#2F5233] text-white rounded-lg"
                       : ""
                   }`}
-                  onClick={() =>
-                    accordionSections.includes(section.subtitle)
-                      ? toggleAccordion(idx)
-                      : null
-                  }
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
                   transition={{ duration: 0.8 }}
                   viewport={{ once: true }}
                 >
                   <h3
-                    className={`text-2xl font-semibold ${
+                    className={`text-2xl font-normal ${
                       accordionSections.includes(section.subtitle)
                         ? "text-white"
                         : "text-[#2F5233]"

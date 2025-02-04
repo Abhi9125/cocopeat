@@ -91,7 +91,7 @@ import { FaWhatsapp } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { Helmet } from "react-helmet";
 import backgroundImage from "../Images/Web_Images/Main-banner.jpg";
-import logo from "../Images/Web_Images/Comapany_logo.jpg";
+import logo from "../Images/Web_Images/Comapany_logo_(1).jpg";
 
 const HeroSection = () => {
   return (
@@ -141,13 +141,13 @@ const HeroSection = () => {
           >
             <img
               src={logo}
-              className="h-20 mb-4"
+              className="h-20 mb-4 rounded-3xl"
               alt="Poyscoco Logo - Empowering Sustainable Growth"
             />
             Empowering Sustainable Growth
           </motion.h1>
           <motion.p
-            className="text-sm sm:text-lg md:text-xl font-sans max-w-2xl leading-relaxed mb-6 text-[#A8BDA1]"
+            className="text-sm sm:text-lg md:text-xl font-sans max-w-2xl leading-relaxed mb-6 text-white"
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 1 }}
@@ -172,7 +172,7 @@ const HeroSection = () => {
             </Link>
             <Link
               to="/about-us"
-              className="px-6 py-3 bg-[#A8BDA1] text-[#2F5233] font-sans text-base rounded-lg hover:bg-[#8AA68E] transition duration-300"
+              className="px-6 py-3 bg-white text-[#2F5233] font-sans text-base rounded-lg hover:bg-[#8AA68E] transition duration-300"
               aria-label="Learn More About Us"
             >
               Learn More

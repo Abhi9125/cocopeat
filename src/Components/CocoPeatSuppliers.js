@@ -127,7 +127,7 @@ const CocoPeatSuppliers = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              Learn More
+              Get in Touch with Us
             </motion.a>
           </motion.div>
 

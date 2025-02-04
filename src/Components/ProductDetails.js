@@ -582,7 +582,7 @@ const ProductDetails = () => {
               Commonly Used For:
             </motion.h3>
             <motion.div
-              className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6"
+              className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 gap-6"
               initial="hidden"
               animate="visible"
               variants={{
@@ -606,7 +606,7 @@ const ProductDetails = () => {
                     <img
                       src={use.image}
                       alt={use.name}
-                      className="w-full h-60 object-cover rounded-lg mb-1"
+                      className="w-full h-40 object-cover rounded-lg mb-1"
                       loading="lazy"
                     />
                   )}
